@@ -6,11 +6,13 @@ import { WelcomeScreen } from '../screens/WelcomeScreen/WelcomeScreen'
 import { StoreContext } from '../App'
 import styled from 'styled-components'
 import { dimensions } from '../theme/dimensions'
+import { usePwa } from '../hooks/usePWA'
 
-const RouterContainer = styled.div`
+const RouterContainer = styled.div<{ $isPwa?: boolean }>`
   padding: 32px 16px;
   width: 100%;
-  height: calc(100svh - ${dimensions.barHeight} - ${dimensions.barHeight});
+  height: ${({ $isPwa }) =>
+    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
 `
 
 export const SCREENS = {
@@ -21,6 +23,7 @@ export const SCREENS = {
 
 export const ScreenRouter: FC = observer(() => {
   const store = useContext(StoreContext)
+  const { isPwa } = usePwa()
   const { currentScreen } = store.AppState
   const [CurrentScreen, setCurrentScreen] = useState<FunctionComponent<{}>>(HomeScreen)
 
@@ -29,7 +32,7 @@ export const ScreenRouter: FC = observer(() => {
   }, [currentScreen])
 
   return (
-    <RouterContainer>
+    <RouterContainer $isPwa={isPwa}>
       <CurrentScreen />
     </RouterContainer>
   )

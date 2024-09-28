@@ -8,6 +8,7 @@ const App: FC = () => {
     <AppContainer className="App">
       <Helmet title="CO2UNTER" description="CO2UNTER" themeColor="#ffffff" />
       <GlobalStyles />
+      App.tsx
     </AppContainer>
   )
 }

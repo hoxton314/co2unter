@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Animatable } from './generic.styles'
 
 export const AppContainer = styled.div`
   padding: 20px;
@@ -10,4 +11,6 @@ export const AppContainer = styled.div`
   justify-content: center;
   align-items: center;
   color: ${({ theme }) => theme.text};
+
+  ${Animatable}
 `

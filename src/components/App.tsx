@@ -17,10 +17,14 @@ export const App: FC = observer(() => {
   const { theme } = store.AppState
 
   const checkApi = async () => {
-    const res = await axiosInstance.get('/')
+    try {
+      const res = await axiosInstance.get('/')
 
-    console.log('API status:', res.status)
-    console.log('API response:', res)
+      console.log('API status:', res.status)
+      console.log('API response:', res)
+    } catch (error) {
+      console.log('API error:', error)
+    }
   }
 
   useEffect(() => {

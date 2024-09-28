@@ -29,9 +29,8 @@ const Subtitle = styled.h2`
 
 export const WelcomePage: FC = () => {
   const checkMockAuth = async () => {
-    const res = await axiosInstance.get('/auth')
-
-    console.log('Mock adapter check:', res.status === 200 ? 'success' : 'failed')
+    // const res = await axiosInstance.get('/auth')
+    // console.log('Mock adapter check:', res.status === 200 ? 'success' : 'failed')
   }
 
   useEffect(() => {

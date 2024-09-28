@@ -47,11 +47,11 @@ export default {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      {
-        test: /\.ts$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
+      // {
+      //   test: /\.ts?$/,
+      //   use: 'ts-loader',
+      //   exclude: /node_modules/,
+      // },
       {
         test: /\.(png|jpe?g|gif|pdf|eot|woff|woff2|ttf|ico|webmanifest|svg)$/i,
         use: [

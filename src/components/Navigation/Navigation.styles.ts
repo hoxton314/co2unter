@@ -9,7 +9,7 @@ export const Container = styled.div<{ $isPwa?: boolean }>`
   padding: 0 16px;
 
   width: 100%;
-  height: ${({ $isPwa }) => `calc(${dimensions.barHeight} + ${$isPwa ? '20px' : '0'})`};
+  height: ${({ $isPwa }) => `calc(${dimensions.barHeight} + ${$isPwa ? '20px' : '0px'})`};
   /* border-radius: 10px 10px 0 0; */
 
   background-color: ${({ theme }) => theme.primary};

@@ -27,9 +27,9 @@ const App: FC = observer(() => {
 
   useEffect(() => {
     try {
-      axiosInstance.get('/').then((res) => {
-        console.log(res)
-      })
+      // axiosInstance.get('/').then((res) => {
+      //   console.log(res)
+      // })
     } catch (error) {
       console.log(error)
     }

@@ -12,6 +12,7 @@ import { Theme } from './theme/theme'
 import { ScreenRouter } from './components/ScreenRouter'
 import { Header } from './components/Header/Header'
 import { Navigation } from './components/Navigation/Navigation'
+import { PWAInstallPrompt } from './components/PWAInstallPrompt'
 
 export const StoreContext = createContext(rootStore)
 
@@ -48,6 +49,7 @@ const App: FC = observer(() => {
       <AppContainer className="App">
         <Helmet title="CO2UNTER" description="CO2UNTER" />
         <GlobalStyles />
+        <PWAInstallPrompt />
         <Header />
         <ScreenRouter />
         <Navigation />

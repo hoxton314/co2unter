@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import { usePwa } from '../hooks/usePWA'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const Prompt = styled.div<{ $shouldShow: boolean }>`
@@ -36,6 +36,10 @@ export const PWAInstallPrompt: FC = observer(() => {
   // const installPWA = () => {
   //   pwaInstallHandler.install()
   // }
+
+  useEffect(() => {
+    console.log('PWAInstallPrompt', { appinstalled, canInstallprompt, enabledPwa, isPwa, userChoice })
+  }, [appinstalled, canInstallprompt, enabledPwa, isPwa, userChoice])
 
   return (
     <Prompt $shouldShow={canInstallprompt}>

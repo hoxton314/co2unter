@@ -42,7 +42,7 @@ export const PWAInstallPrompt: FC = observer(() => {
   }, [appinstalled, canInstallprompt, enabledPwa, isPwa, userChoice])
 
   return (
-    <Prompt $shouldShow={canInstallprompt}>
+    <Prompt $shouldShow>
       <button onClick={showInstallPrompt}>Install PWA</button>
     </Prompt>
   )

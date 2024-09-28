@@ -12,7 +12,7 @@ export const WelcomeScreen: FC = observer(() => {
       <h1>Welcome to CO2TROL app!</h1>
       <h2> Do you wish to take a quick questionnaire to help you understand your carbon footprint?</h2>
 
-      <div>isPwa: {isPwa}</div>
+      <div>isPwa: {isPwa.toString()}</div>
 
       <ActionWrapper>
         <Button type="secondary">Cancel</Button>

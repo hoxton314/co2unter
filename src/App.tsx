@@ -9,7 +9,6 @@ import { ThemeProvider } from 'styled-components'
 import { observer } from 'mobx-react'
 import { rootStore } from './store/Root.store'
 import { Theme } from './theme/theme'
-import { API_URL } from './constants/envs'
 
 export const StoreContext = createContext(rootStore)
 
@@ -23,7 +22,7 @@ const App: FC = observer(() => {
   const { theme } = store.AppState
 
   useEffect(() => {
-    axiosInstance.get(`${API_URL}/`).then((res) => {
+    axiosInstance.get('/').then((res) => {
       console.log(res)
     })
   }, [])

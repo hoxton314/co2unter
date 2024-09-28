@@ -25,6 +25,8 @@ export const App: FC = observer(() => {
 
   useEffect(() => {
     void checkApi()
+
+    console.log('PUBLIC_URL:', process.env.PUBLIC_URL)
   }, [])
   return (
     <StoreContext.Provider value={rootStore}>

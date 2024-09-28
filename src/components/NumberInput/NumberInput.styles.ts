@@ -6,6 +6,17 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    opacity: 1;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `
 
 export const ValueButton = styled.button`
@@ -30,7 +41,6 @@ export const Input = styled.input`
   width: 80px;
   font-size: 36px;
   aspect-ratio: 1;
-  padding-left: 14px;
   border: none;
   border-radius: 5px;
   text-align: center;

@@ -2,33 +2,56 @@ import { observer } from 'mobx-react'
 import { usePwa } from '../hooks/usePWA'
 import { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { Button } from '../styles/generic.styles'
 
 const Prompt = styled.div<{ $shouldShow: boolean }>`
-  display: ${({ $shouldShow }) => ($shouldShow ? 'block' : 'none')};
+  display: ${({ $shouldShow }) => ($shouldShow ? 'flex' : 'none')};
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px;
-  background-color: #f1f1f1;
+  padding: 32px 16px;
+  background-color: ${({ theme }) => theme.secondary};
+  color: ${({ theme }) => theme.tertiary};
   text-align: center;
-  border-top: 1px solid #ccc;
+  -webkit-box-shadow: 0px 8px 24px 0px #222222;
+  -moz-box-shadow: 0px 8px 24px 0px #222222;
+  box-shadow: 0px 8px 24px 0px #222222;
 
-  button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
+  width: 100%;
+  height: 200px;
+  max-width: 320px;
+  left: calc(50%);
+  top: calc(50% - 100px);
+  transform: translateX(-50%);
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
     cursor: pointer;
   }
 `
 
 export const PWAInstallPrompt: FC = observer(() => {
-  const { appinstalled, canInstallprompt, enabledPwa, showInstallPrompt, isPwa, userChoice } = usePwa()
-
+  const { isPwa } = usePwa()
   const [installPrompt, setInstallPrompt] = useState<any>(null)
   const [canInstall, setCanInstall] = useState(false)
+
+  const alreadyAsked = localStorage.getItem('installPrompt')
+
+  const closePrompt = () => {
+    localStorage.setItem('installPrompt', 'true')
+    setCanInstall(false)
+  }
 
   // pwaInstallHandler.addListener((canInstall) => {
   //   setCanInstall(canInstall)
@@ -58,8 +81,17 @@ export const PWAInstallPrompt: FC = observer(() => {
   }
 
   return (
-    <Prompt $shouldShow={!isPwa && canInstall}>
-      <button onClick={installPWA}>Install PWA</button>
+    <Prompt $shouldShow={!isPwa && !alreadyAsked && canInstall}>
+      <svg onClick={closePrompt} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M23 20.168l-8.185-8.187 8.185-8.174-2.832-2.807-8.182 8.179-8.176-8.179-2.81 2.81 8.186 8.196-8.186 8.184 2.81 2.81 8.203-8.192 8.18 8.192z"
+        />
+      </svg>
+      <h1> Our app is available for installation!</h1>
+      <Button onClick={installPWA} type="primary">
+        Install PWA
+      </Button>
     </Prompt>
   )
 })

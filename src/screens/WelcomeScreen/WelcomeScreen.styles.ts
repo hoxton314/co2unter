@@ -14,11 +14,15 @@ export const ScreenContainer = styled.div`
   h2 {
     font-size: 20px;
     margin: 0px;
+    width: 100%;
+    text-align: center;
   }
 `
 
 export const ActionWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  justify-content: space-between;
+  padding: 0 32px;
 `

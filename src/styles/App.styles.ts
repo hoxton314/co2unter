@@ -9,5 +9,5 @@ export const AppContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: wheat;
+  color: ${({ theme }) => theme.text};
 `

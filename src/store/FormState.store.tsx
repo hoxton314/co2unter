@@ -22,7 +22,7 @@ export class FormStateStore {
   form: Form = {
     household: undefined,
     electricityUsage: undefined,
-    inhabitants: undefined,
+    inhabitants: 1,
     diet: undefined,
     shopping: undefined,
     dailyCommute: undefined,

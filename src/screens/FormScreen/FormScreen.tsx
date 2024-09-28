@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react'
-import { FC, useContext, useState } from 'react'
+import { FC, useContext } from 'react'
 import { HouseSize } from './Steps/HouseSize'
 import { HousePeopleCount } from './Steps/HousePeopleCount'
 import { ElectricUsage } from './Steps/ElectricityUsage'

@@ -2,17 +2,22 @@ import { observer } from 'mobx-react'
 import { FC, useContext } from 'react'
 import { FormStepContainer, RadioContainer, RadioItem, Title } from '../FormScreen.styles'
 import { StoreContext } from '../../../App'
+import { convertOptionsToObject } from '../../../methods/transConvert'
 
 export const HouseSize: FC = observer(() => {
   const store = useContext(StoreContext)
   const { household } = store.FormState.form
+  const { houseSize: trans } = store.TranslationsState.translations.FormScreen
+
+  // convert {label, name} to {name: label}
+  const options = convertOptionsToObject(trans.options)
 
   return (
     <FormStepContainer>
-      <Title> placeholder </Title>
+      <Title> {trans.title} </Title>
       <RadioContainer>
         <RadioItem $selected={household === 'studio'} onClick={() => store.FormState.setHousehold('studio')}>
-          <h3> Studio </h3>
+          <h3> {options.studio} </h3>
           <svg width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -22,7 +27,7 @@ export const HouseSize: FC = observer(() => {
         </RadioItem>
 
         <RadioItem $selected={household === 'oneBedroom'} onClick={() => store.FormState.setHousehold('oneBedroom')}>
-          <h3>One-bedroom</h3>
+          <h3>{options.oneBedroom}</h3>
           <svg width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -32,7 +37,7 @@ export const HouseSize: FC = observer(() => {
         </RadioItem>
 
         <RadioItem $selected={household === 'twoBedroom'} onClick={() => store.FormState.setHousehold('twoBedroom')}>
-          <h3>Two-bedroom</h3>
+          <h3>{options.twoBedroom}</h3>
           <svg width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -45,7 +50,7 @@ export const HouseSize: FC = observer(() => {
           $selected={household === 'threeBedroom'}
           onClick={() => store.FormState.setHousehold('threeBedroom')}
         >
-          <h3>Three-bedroom</h3>
+          <h3>{options.threeBedroom}</h3>
           <svg width="24" height="24" viewBox="0 0 24 24">
             <path
               fill="currentColor"

@@ -16,6 +16,7 @@ import { StaleWhileRevalidate } from 'workbox-strategies'
 
 declare const self: ServiceWorkerGlobalScope
 const manifest = self.__WB_MANIFEST
+console.log(manifest)
 
 clientsClaim()
 

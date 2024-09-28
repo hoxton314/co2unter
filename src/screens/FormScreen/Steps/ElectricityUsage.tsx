@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import { FC, useContext, useState } from 'react'
-import { FormStepContainer, RadioListContainer, RadioListItem, Title } from '../FormScreen.styles'
+import { FormStepContainer, RadioListContainer, ElectricityRadioListItem, Title } from '../FormScreen.styles'
 import { StoreContext } from '../../../App'
 import { NumberInput } from '../../../components/NumberInput/NumberInput'
 import { electricitySvgs } from '../icons'
@@ -31,7 +31,7 @@ export const ElectricUsage: FC = observer(() => {
           const SVG = electricitySvgs[index]
 
           return (
-            <RadioListItem
+            <ElectricityRadioListItem
               key={index}
               onClick={() =>
                 store.FormState.setElectricityUsage(
@@ -46,7 +46,7 @@ export const ElectricUsage: FC = observer(() => {
               {option.name === 'electricityUsageNumber' && (
                 <NumberInput value={customValue} onChange={(value) => setCustomValue(value)} />
               )}
-            </RadioListItem>
+            </ElectricityRadioListItem>
           )
         })}
       </RadioListContainer>

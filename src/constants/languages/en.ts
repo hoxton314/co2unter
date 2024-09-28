@@ -87,19 +87,19 @@ export const translations: ITranslations = {
       options: [
         {
           label: 'Almost never',
-          name: 'neverShopping',
+          name: 'never',
         },
         {
           label: 'Rarely',
-          name: 'rarelyShopping',
+          name: 'rarely',
         },
         {
           label: 'Occasionally',
-          name: 'occasionallyShopping',
+          name: 'occasionally',
         },
         {
           label: 'Regularly',
-          name: 'regularlyShopping',
+          name: 'regularly',
         },
       ],
     },

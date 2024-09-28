@@ -86,19 +86,19 @@ export interface ITranslations {
       options: [
         {
           label: string
-          name: 'neverShopping'
+          name: 'never'
         },
         {
           label: string
-          name: 'rarelyShopping'
+          name: 'rarely'
         },
         {
           label: string
-          name: 'occasionallyShopping'
+          name: 'occasionally'
         },
         {
           label: string
-          name: 'regularlyShopping'
+          name: 'regularly'
         },
       ]
     }

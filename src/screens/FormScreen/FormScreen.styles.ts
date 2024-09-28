@@ -111,11 +111,11 @@ export const RadioListContainer = styled.div`
   gap: 16px;
 `
 
-export const RadioListItem = styled.div<{ $selected?: boolean }>`
+export const RadioListItem = styled.div<{ $selected?: boolean; $noIcons?: boolean }>`
   height: 80px;
   width: 100%;
   display: grid;
-  grid-template-columns: 40px 150px auto;
+  grid-template-columns: 40px 1fr;
   padding: 12px 24px;
   border-radius: 5px;
   gap: 16px;
@@ -182,4 +182,12 @@ export const Spacer = styled.div<{ $size?: number }>`
   height: 1px;
   width: 100%;
   margin-top: ${({ $size }) => ($size ? $size - 1 : 16)}px;
+`
+
+export const ShoppingRadioListItem = styled(RadioListItem)`
+  grid-template-columns: 1fr;
+`
+
+export const ElectricityRadioListItem = styled(RadioListItem)`
+  grid-template-columns: 40px 150px auto;
 `

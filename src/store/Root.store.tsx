@@ -1,16 +1,13 @@
 import { AppStateStore } from './AppState.store'
-import { FormStore } from './Form.store'
-import { TranslationsStore } from './Translations.store'
+import { FormStateStore } from './Form.store'
 
 export class RootStore {
   AppState: AppStateStore
-  Form: FormStore
-  Translations: TranslationsStore
+  FormState: FormStateStore
 
   constructor() {
     this.AppState = new AppStateStore(this)
-    this.Form = new FormStore(this)
-    this.Translations = new TranslationsStore(this)
+    this.FormState = new FormStateStore(this)
   }
 }
 

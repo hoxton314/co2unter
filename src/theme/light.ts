@@ -6,4 +6,5 @@ export const lightTheme: Theme = {
   secondary: '#754085',
   tertiary: '#ebe6db',
   text: '#1f1f1f',
+  gray: '#4b4b4b',
 }

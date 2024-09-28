@@ -115,8 +115,8 @@ export const RadioListItem = styled.div<{ $selected?: boolean }>`
   height: 80px;
   width: 100%;
   display: grid;
-  grid-template-columns: 32px 160px auto;
-  padding: 12px;
+  grid-template-columns: 40px 150px auto;
+  padding: 12px 24px;
   border-radius: 5px;
   gap: 16px;
 
@@ -152,13 +152,14 @@ export const RadioListItem = styled.div<{ $selected?: boolean }>`
   svg {
     align-self: center;
     justify-self: center;
-    width: 32px;
+    width: 48px;
     aspect-ratio: 1;
   }
 
   input[type='number'] {
     aspect-ratio: unset;
-    height: 50px;
+    height: 42px;
+    font-size: 26px;
     width: 100%;
     margin: -12px 0;
     text-align: right;

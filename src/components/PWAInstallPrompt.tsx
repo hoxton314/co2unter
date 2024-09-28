@@ -27,6 +27,7 @@ const Prompt = styled.div<{ $shouldShow: boolean }>`
 export const PWAInstallPrompt: FC = observer(() => {
   const { appinstalled, canInstallprompt, enabledPwa, showInstallPrompt, isPwa, userChoice } = usePwa()
 
+  const [installPrompt, setInstallPrompt] = useState<any>(null)
   const [canInstall, setCanInstall] = useState(false)
 
   // pwaInstallHandler.addListener((canInstall) => {
@@ -38,12 +39,26 @@ export const PWAInstallPrompt: FC = observer(() => {
   // }
 
   useEffect(() => {
-    console.log('PWAInstallPrompt', { appinstalled, canInstallprompt, enabledPwa, isPwa, userChoice })
-  }, [appinstalled, canInstallprompt, enabledPwa, isPwa, userChoice])
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault()
+      setInstallPrompt(event)
+      setCanInstall(true)
+    })
+  }, [])
+
+  const installPWA = async () => {
+    if (!installPrompt) {
+      return
+    }
+    const result = await installPrompt.prompt()
+    console.log(`Install prompt was: ${result.outcome}`)
+    setInstallPrompt(null)
+    setCanInstall(false)
+  }
 
   return (
-    <Prompt $shouldShow={!isPwa}>
-      <button onClick={showInstallPrompt}>Install PWA</button>
+    <Prompt $shouldShow={!isPwa && canInstall}>
+      <button onClick={installPWA}>Install PWA</button>
     </Prompt>
   )
 })

@@ -1,49 +1,26 @@
 {
   "compilerOptions": {
-    "moduleResolution": "bundler",
-    "target": "es2022",
-    "module": "es2022",
-    "lib": ["es2022", "DOM"],
-    "jsx": "react-jsx",
-    "strict": false,
-    "allowJs": false,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": false,
-    "skipLibCheck": true,
-    "useUnknownInCatchVariables": true,
-    "noImplicitThis": true,
-    "plugins": [
-      {
-        "name": "@styled/typescript-styled-plugin",
-        "lint": {
-          "validProperties": ["container-type"],
-          "unknownAtRules": "ignore"
-        }
-      }
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@icons/*": ["src/components/Icons"],
-      "@assets/*": ["src/assets/*"],
-      "@communication/*": ["src/communication/*"],
-      "@constants/*": ["src/constants/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@methods/*": ["src/methods/*"],
-      "@modules/*": ["src/modules/*"],
-      "@store/*": ["src/store/*"],
-      "@styles/*": ["src/styles/*"],
-      "@customTypes/*": ["src/types/*"],
-      "@themes/*": ["src/themes/*"]
-    }
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
   },
-  "include": ["**/*.js", "**/*.ts", "**/*.tsx"],
-  "files": ["./custom.d.ts"],
-  "exclude": ["node_modules", "./*js"]
+  "include": [
+    "src"
+  ]
 }

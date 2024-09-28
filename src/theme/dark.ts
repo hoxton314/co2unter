@@ -1,4 +1,6 @@
-export const darkTheme = {
+import { Theme } from './theme'
+
+export const darkTheme: Theme = {
   name: 'dark',
   primary: '#7affcc',
   secondary: '#ae79be',

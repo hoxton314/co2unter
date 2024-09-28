@@ -8,6 +8,7 @@ import { darkTheme } from './theme/dark'
 import { ThemeProvider } from 'styled-components'
 import { observer } from 'mobx-react'
 import { rootStore } from './store/Root.store'
+import { Theme } from './theme/theme'
 
 export const StoreContext = createContext(rootStore)
 
@@ -26,8 +27,8 @@ const App: FC = observer(() => {
     })
   }, [])
   return (
-    <ThemeProvider theme={themes[theme]}>
-      <AppContainer className="App">
+    <ThemeProvider theme={themes[theme] as Theme}>
+      <AppContainer className="App" onClick={() => store.AppState.toggleTheme()}>
         <Helmet title="CO2UNTER" description="CO2UNTER" themeColor="#ffffff" />
         <GlobalStyles />
         App.tsx

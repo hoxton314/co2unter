@@ -67,21 +67,6 @@ export default {
       },
     ],
   },
-  plugins: [
-    new ProgressPlugin(),
-    new Dotenv(),
-    new HtmlWebpackPlugin({
-      title: 'React Boilerplate',
-      template: './src/index.html',
-      inject: true,
-    }),
-    new ProvidePlugin({
-      process: 'process/browser',
-    }),
-    new ProvidePlugin({
-      Buffer: ['buffer', 'Buffer'],
-    }),
-  ],
   mode: NODE_ENV,
   target: 'web',
   output: {

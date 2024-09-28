@@ -14,7 +14,7 @@ export type FlyingHabit = 'rarely' | 'occasionally' | 'regularly' | flightCount
 export type Form = {
   household: Household | undefined
   electricityUsage: number | undefined
-  inhabitants: number | undefined
+  inhabitants: number
   diet: Diet | undefined
   shopping: Shopping | undefined
   dailyCommute: DailyCommute | undefined

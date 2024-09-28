@@ -17,6 +17,7 @@ const RouterContainer = styled.div<{ $isPwa?: boolean }>`
     `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
   max-height: ${({ $isPwa }) =>
     `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+  max-width: 600px;
 
   overflow-y: auto;
   overflow-x: hidden;

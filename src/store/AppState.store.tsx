@@ -1,15 +1,14 @@
 import { action, makeAutoObservable } from 'mobx'
 import { RootStore } from './Root.store'
 import { SCREENS } from '../components/ScreenRouter'
+import { DEV_MODE } from '../constants/envs'
 
 export type Theme = 'light' | 'dark'
-
-const DEV_MODE = process.env.DEV_MODE === 'true'
 
 export class AppStateStore {
   DEV_MODE = DEV_MODE || false
   rootStore
-  theme = 'dark' as Theme
+  theme = 'light' as Theme
   currentScreen: keyof typeof SCREENS = 'welcome'
 
   constructor(rootStore: RootStore) {

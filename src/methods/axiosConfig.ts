@@ -13,7 +13,7 @@ export const axiosInstanceAuth = axios.create({
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 axiosInstance.interceptors.response.use(undefined, async (error: any) => {
   console.error(error)
-  if (error.response && error.response.status === 401 && process.env.STAGE === 'prod') {
+  if (error.response && error.response.status === 401 && process.env.REACT_APP_DEV_MODE !== 'true') {
     // redirect to login page
   }
 

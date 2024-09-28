@@ -28,7 +28,7 @@ const App: FC = observer(() => {
   }, [])
   return (
     <ThemeProvider theme={themes[theme] as Theme}>
-      <AppContainer className="App" onClick={() => store.AppState.toggleTheme()}>
+      <AppContainer className="App">
         <Helmet title="CO2UNTER" description="CO2UNTER" themeColor="#ffffff" />
         <GlobalStyles />
         App.tsx

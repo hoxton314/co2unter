@@ -13,6 +13,11 @@ const RouterContainer = styled.div<{ $isPwa?: boolean }>`
   width: 100%;
   height: ${({ $isPwa }) =>
     `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+  max-height: ${({ $isPwa }) =>
+    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+
+  overflow-y: auto;
+  overflow-x: hidden;
 `
 
 export const SCREENS = {

@@ -13,7 +13,7 @@ export default merge(common, {
   devtool: 'source-map',
   plugins: [
     new ProgressPlugin(),
-    new Dotenv(),
+    new Dotenv({ systemvars: true }),
     new HtmlWebpackPlugin({
       title: 'CO2UNTER',
       template: './src/index.html',

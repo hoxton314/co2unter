@@ -27,8 +27,9 @@ export default merge(common, {
     }),
     new CleanWebpackPlugin(), // Cleans the /dist folder before each build
     new GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
+      swDest: 'service-worker.js', // Output name for the service worker file
+      clientsClaim: true, // Allows the service worker to take control of all clients once it's activated
+      skipWaiting: true, // Skip waiting period for new SW to activate
     }),
   ],
 })

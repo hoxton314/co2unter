@@ -14,6 +14,7 @@ const __dirname = path.dirname(__filename)
 export default {
   entry: {
     app: './src/index.tsx',
+    serviceWorker: './src/service-worker.ts',
   },
   devtool: 'inline-source-map',
   resolve: {
@@ -43,6 +44,11 @@ export default {
     rules: [
       {
         test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.ts$/,
         use: 'ts-loader',
         exclude: /node_modules/,
       },

@@ -6,9 +6,13 @@ import { ScreenContainer } from './HomeScreen.styles'
 
 export const HomeScreen: FC = observer(() => {
   const store = useContext(StoreContext)
-  const { testEmission, sectorsBreakdown, environmentVsEmission } = store.TranslationsState.translations.HomeScreen
+  const { welcome, testEmission, sectorsBreakdown, environmentVsEmission } =
+    store.TranslationsState.translations.HomeScreen
   return (
     <ScreenContainer>
+      <Button onClick={() => store.AppState.setCurrentScreen('home')} type="primary">
+        {welcome}
+      </Button>
       <Button onClick={() => store.AppState.setCurrentScreen('form')} type="primary">
         {testEmission}
       </Button>

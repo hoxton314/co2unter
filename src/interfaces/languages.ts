@@ -1,5 +1,6 @@
 export interface ITranslations {
   HomeScreen: {
+    welcome: string
     testEmission: string
     sectorsBreakdown: string
     environmentVsEmission: string

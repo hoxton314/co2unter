@@ -1,6 +1,7 @@
 import { ITranslations } from '../../interfaces/languages'
 export const translations: ITranslations = {
   HomeScreen: {
+    welcome: 'Ekran powitalny (temp)',
     testEmission: 'Jak moje życie wpływa na emisję CO2?',
     sectorsBreakdown: 'Jaki wpływ na emisję CO2 mają różne sektory życia?',
     environmentVsEmission: 'Środowisko vs. emisja CO2',

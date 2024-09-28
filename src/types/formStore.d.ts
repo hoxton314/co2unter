@@ -4,6 +4,7 @@ export type flightCount = {
   longRange: number
 }
 
+export type ElectricityPresets = 'veryLow' | 'low' | 'moderate' | 'big' | 'veryBig'
 export type Household = 'studio' | 'oneBedroom' | 'twoBedroom' | 'threeBedroom'
 export type Diet = 'vegan' | 'mediterranean' | 'lowMeat' | 'everything'
 export type Shopping = 'never' | 'rarely' | 'occasionally' | 'regularly'
@@ -13,7 +14,7 @@ export type FlyingHabit = 'rarely' | 'occasionally' | 'regularly' | flightCount
 
 export type Form = {
   household: Household | undefined
-  electricityUsage: number | undefined
+  electricityUsage: number | ElectricityPresets | undefined
   inhabitants: number
   diet: Diet | undefined
   shopping: Shopping | undefined

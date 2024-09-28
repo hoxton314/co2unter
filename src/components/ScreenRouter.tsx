@@ -9,12 +9,12 @@ import { dimensions } from '../theme/dimensions'
 import { usePwa } from '../hooks/usePWA'
 
 const RouterContainer = styled.div<{ $isPwa?: boolean }>`
-  padding: 32px 16px;
+  /* padding: 32px 16px; */
   width: 100%;
   height: ${({ $isPwa }) =>
-    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0px'})`};
   max-height: ${({ $isPwa }) =>
-    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0px'})`};
   max-width: 600px;
 
   overflow-y: auto;

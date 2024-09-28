@@ -49,7 +49,12 @@ input, button, textarea, select{
 }
 
 body, html{
-    height: 100%; 
-    scroll-behavior: smooth; 
+    height: 100%;
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.background};
 }
 `

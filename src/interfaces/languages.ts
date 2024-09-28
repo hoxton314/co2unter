@@ -1,6 +1,9 @@
 export interface ITranslations {
   HomeScreen: {
-    hello: string
+    welcome: string
+    testEmission: string
+    sectorsBreakdown: string
+    environmentVsEmission: string
   }
   FormScreen: {
     houseSize: {

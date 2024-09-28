@@ -3,6 +3,8 @@ import { FC, FunctionComponent, useContext, useEffect, useState } from 'react'
 import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
 import { FormScreen } from '../screens/FormScreen/FormScreen'
 import { WelcomeScreen } from '../screens/WelcomeScreen/WelcomeScreen'
+import { SectorsBreakdownScreen } from '../screens/SectorsBreakdownScreen/SectorsBreakdownScreen'
+import { EnvironmentVsEmissionScreen } from '../screens/EnvironmentVsEmissionScreen/EnvironmentVsEmissionScreen'
 import { StoreContext } from '../App'
 import styled from 'styled-components'
 import { dimensions } from '../theme/dimensions'
@@ -25,6 +27,8 @@ export const SCREENS = {
   home: HomeScreen,
   form: FormScreen,
   welcome: WelcomeScreen,
+  sectorsBreakdown: SectorsBreakdownScreen,
+  environmentVsEmission: EnvironmentVsEmissionScreen,
 }
 
 export const ScreenRouter: FC = observer(() => {

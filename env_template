@@ -1,2 +1,2 @@
 DEV_MODE="false"
-STAGE="<#STAGE>"
+PUBLIC_URL=""

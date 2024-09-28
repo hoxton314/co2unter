@@ -55,7 +55,7 @@
     "format:fix": "yarn prettier --write --ignore-path .gitignore .",
     "lint": "yarn eslint --quiet --report-unused-disable-directives .",
     "lint:fix": "yarn eslint --quiet --report-unused-disable-directives --fix .",
-    "build": "yarn intro && webpack --config webpack.prod.js",
+    "build": "yarn intro && webpack --config webpack.prod.js --env WEB_API_URL=$WEB_API_URL --env PUBLIC_URL=$PUBLIC_URL",
     "start": "yarn intro && webpack serve --config webpack.dev.js"
   },
   "dependencies": {

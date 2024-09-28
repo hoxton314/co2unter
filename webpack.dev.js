@@ -14,7 +14,9 @@ export default merge(common, {
   },
   plugins: [
     new ProgressPlugin(),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
     new HtmlWebpackPlugin({
       title: 'CO2UNTER',
       template: './src/index.html',

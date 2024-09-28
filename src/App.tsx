@@ -25,9 +25,13 @@ const App: FC = observer(() => {
   const { theme } = store.AppState
 
   useEffect(() => {
-    axiosInstance.get('/').then((res) => {
-      console.log(res)
-    })
+    try {
+      axiosInstance.get('/').then((res) => {
+        console.log(res)
+      })
+    } catch (error) {
+      console.log(error)
+    }
 
     const hasWelcomeScreenVisited = localStorage.getItem('hasWelcomeScreenVisited')
     if (!hasWelcomeScreenVisited) {

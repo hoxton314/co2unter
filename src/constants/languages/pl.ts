@@ -1,7 +1,9 @@
 import { ITranslations } from '../../interfaces/languages'
 export const translations: ITranslations = {
   HomeScreen: {
-    hello: 'Witaj w aplikacji CO2NTROL!',
+    testEmission: 'Jak moje życie wpływa na emisję CO2?',
+    sectorsBreakdown: 'Jaki wpływ na emisję CO2 mają różne sektory życia?',
+    environmentVsEmission: 'Środowisko vs. emisja CO2',
   },
   FormScreen: {
     houseSize: {

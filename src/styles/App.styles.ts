@@ -1,16 +1,11 @@
 import styled from 'styled-components'
-import { Animatable } from './generic.styles'
 
 export const AppContainer = styled.div`
-  padding: 20px;
   min-height: 100svh;
   width: 100vw;
   background-color: ${({ theme }) => theme.tertiary};
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: ${({ theme }) => theme.text};
-
-  ${Animatable}
 `

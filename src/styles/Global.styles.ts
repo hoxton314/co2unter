@@ -1,8 +1,13 @@
 import { createGlobalStyle } from 'styled-components'
+import { Animatable } from './generic.styles'
 
 export const GlobalStyles = createGlobalStyle`
 *, *::before, *::after{
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    flex-direction: column;
+    user-select: none;
+
+    ${Animatable}
 }
 
 *{

@@ -4,12 +4,21 @@ import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
 import { FormScreen } from '../screens/FormScreen/FormScreen'
 import { WelcomeScreen } from '../screens/WelcomeScreen/WelcomeScreen'
 import { StoreContext } from '../App'
+import styled from 'styled-components'
+import { dimensions } from '../theme/dimensions'
+
+const RouterContainer = styled.div`
+  padding: 32px 16px;
+  width: 100%;
+  height: calc(100svh - ${dimensions.barHeight} - ${dimensions.barHeight});
+`
 
 export const SCREENS = {
   home: HomeScreen,
   form: FormScreen,
   welcome: WelcomeScreen,
 }
+
 export const ScreenRouter: FC = observer(() => {
   const store = useContext(StoreContext)
   const { currentScreen } = store.AppState
@@ -19,5 +28,9 @@ export const ScreenRouter: FC = observer(() => {
     setCurrentScreen(SCREENS[currentScreen])
   }, [currentScreen])
 
-  return <CurrentScreen />
+  return (
+    <RouterContainer>
+      <CurrentScreen />
+    </RouterContainer>
+  )
 })

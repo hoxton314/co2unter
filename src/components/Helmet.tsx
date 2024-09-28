@@ -4,16 +4,14 @@ import { Helmet as ReactHelmet } from 'react-helmet'
 interface HelmetProps {
   title: string
   description?: string
-  themeColor?: string
 }
 
-export const Helmet: FC<HelmetProps> = ({ title, description, themeColor }) => {
+export const Helmet: FC<HelmetProps> = ({ title, description }) => {
   return (
     <ReactHelmet defaultTitle={title}>
       {/* General */}
       <meta charSet="utf-8" />
       <meta name="description" content={description} />
-      <meta name="theme-color" content={themeColor} />
 
       {/* Fonts */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />

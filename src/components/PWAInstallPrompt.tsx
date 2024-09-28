@@ -40,6 +40,7 @@ export const PWAInstallPrompt: FC = observer(() => {
 
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (event) => {
+      console.log('beforeinstallprompt fired')
       event.preventDefault()
       setInstallPrompt(event)
       setCanInstall(true)

@@ -76,7 +76,7 @@ export default {
   mode: NODE_ENV,
   target: 'web',
   output: {
-    filename: '[name].[contenthash].bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'build'),
     publicPath: '/',
     clean: true,

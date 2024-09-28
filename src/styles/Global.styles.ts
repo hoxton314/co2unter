@@ -56,5 +56,6 @@ body, html{
     line-height: 1.5;
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.tetiary};
+    user-select: none;
 }
 `

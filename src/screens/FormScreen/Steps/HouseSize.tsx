@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import { FC, useContext } from 'react'
-import { FormStepContainer, RadioContainer, RadioItem, SubTitle, Title } from '../FormScreen.styles'
+import { FormStepContainer, RadioContainer, RadioItem, Title } from '../FormScreen.styles'
 import { StoreContext } from '../../../App'
 
 export const HouseSize: FC = observer(() => {

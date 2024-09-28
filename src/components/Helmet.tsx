@@ -17,6 +17,8 @@ interface HelmetProps {
 export const Helmet: FC<HelmetProps> = ({ title, description, themeColor }) => {
   return (
     <ReactHelmet defaultTitle={title}>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
       {/* General */}
       <meta charSet="utf-8" />
       <meta name="description" content={description} />

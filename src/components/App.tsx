@@ -1,4 +1,4 @@
-import { createContext, FC, useContext } from 'react'
+import { createContext, FC, useContext, useEffect } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { observer } from 'mobx-react'
 
@@ -8,6 +8,7 @@ import { ContentRouter } from './ContentRouter'
 
 import { rootStore } from '@store/Root.store'
 import { themes } from '@/themes/themes'
+import { axiosInstance } from '@/methods/axiosConfig'
 
 export const StoreContext = createContext(rootStore)
 
@@ -15,6 +16,16 @@ export const App: FC = observer(() => {
   const store = useContext(StoreContext)
   const { theme } = store.AppState
 
+  const checkApi = async () => {
+    const res = await axiosInstance.get('/')
+
+    console.log('API status:', res.status)
+    console.log('API response:', res)
+  }
+
+  useEffect(() => {
+    void checkApi()
+  }, [])
   return (
     <StoreContext.Provider value={rootStore}>
       <Helmet title="React TS boilerplate" description="React boilerplate" themeColor="#320822" />

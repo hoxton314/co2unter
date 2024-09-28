@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import './App.css'
 import { AppContainer } from './styles/App.styles'
 import { GlobalStyles } from './styles/Global.styles'
 import { Helmet } from './components/Helmet'

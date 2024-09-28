@@ -31,6 +31,7 @@ export const App: FC = observer(() => {
     void checkApi()
 
     console.log('PUBLIC_URL:', process.env.PUBLIC_URL)
+    console.log('test: ', process.env.VERCEL_ENV)
   }, [])
   return (
     <StoreContext.Provider value={rootStore}>

@@ -19,7 +19,6 @@ export class FormStore {
 
   constructor(rootStore: RootStore) {
     makeAutoObservable(this)
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     this.rootStore = rootStore
   }
 

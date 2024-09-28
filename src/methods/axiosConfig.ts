@@ -1,12 +1,9 @@
 import axios from 'axios'
 import { API_URL } from '../constants/envs'
 
-export const axiosInstance = axios.create({
-  baseURL: API_URL,
-})
+export const axiosInstance = axios.create({})
 
 export const axiosInstanceAuth = axios.create({
-  baseURL: API_URL,
   withCredentials: true,
 })
 

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import { FC, FunctionComponent, useContext, useEffect, useState } from 'react'
-import { HomeScreen } from '../screens/HomeScreen/HomeScreen'
+import { MapScreen } from '../screens/HomeScreen/MapScreen'
 import { FormScreen } from '../screens/FormScreen/FormScreen'
 import { WelcomeScreen } from '../screens/WelcomeScreen/WelcomeScreen'
 import { StoreContext } from '../App'
@@ -22,16 +22,17 @@ const RouterContainer = styled.div<{ $isPwa?: boolean }>`
 `
 
 export const SCREENS = {
-  home: HomeScreen,
+  home: MapScreen,
   form: FormScreen,
   welcome: WelcomeScreen,
+  map: MapScreen,
 }
 
 export const ScreenRouter: FC = observer(() => {
   const store = useContext(StoreContext)
   const { isPwa } = usePwa()
   const { currentScreen } = store.AppState
-  const [CurrentScreen, setCurrentScreen] = useState<FunctionComponent<{}>>(HomeScreen)
+  const [CurrentScreen, setCurrentScreen] = useState<FunctionComponent<{}>>(MapScreen)
 
   useEffect(() => {
     setCurrentScreen(SCREENS[currentScreen])

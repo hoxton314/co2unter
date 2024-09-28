@@ -1,30 +1,21 @@
 import { action, makeAutoObservable } from 'mobx'
 import { RootStore } from './Root.store'
-import { SCREENS } from '../components/ScreenRouter'
 import { DEV_MODE } from '../constants/envs'
-
-export type flightCount = {
-  shortRange: number
-  midRange: number
-  longRange: number
-}
-
-export type form = {
-  houseHold: 'studio' | 'oneBedroom' | 'twoBedroom' | 'threeBedroom'
-  electricityUsage: number
-  inhabitants: number
-  diet: 'vegan' | 'mediterranean' | 'lowMeat' | 'everything'
-  shopping: 'never' | 'rarely' | 'occasionally' | 'regularly'
-  dailyCommute: 'footAndCycle' | 'publicTransport' | 'carpooling' | 'car'
-  otherCarUsage: number
-  carType?: 'electric' | 'gas' | 'diesel' | 'fuel'
-  flyingHabit: 'rarely' | 'occasionally' | 'regularly' | flightCount
-}
+import { Form, Household, Diet, Shopping, DailyCommute, CarType, FlyingHabit } from '../types/formStore'
 
 export class FormStore {
   DEV_MODE = DEV_MODE || false
   rootStore
-  currentScreen: keyof typeof SCREENS = 'welcome'
+  form = {
+    household: undefined,
+    electricityUsage: undefined,
+    inhabitants: undefined,
+    diet: undefined,
+    shopping: undefined,
+    dailyCommute: undefined,
+    otherCarUsage: undefined,
+    flyingHabit: undefined,
+  } as Form
 
   constructor(rootStore: RootStore) {
     makeAutoObservable(this)
@@ -32,15 +23,39 @@ export class FormStore {
     this.rootStore = rootStore
   }
 
-  // @action.bound setTheme(theme: Theme) {
-  //   this.theme = theme
-  // }
+  @action.bound setHousehold(household: Household) {
+    this.form.household = household
+  }
 
-  // @action.bound toggleTheme() {
-  //   this.theme = this.theme === 'light' ? 'dark' : 'light'
-  // }
+  @action.bound setElectricityUsage(electricityUsage: number) {
+    this.form.electricityUsage = electricityUsage
+  }
 
-  @action.bound setCurrentScreen(screen: keyof typeof SCREENS) {
-    this.currentScreen = screen
+  @action.bound setInhabitants(inhabitants: number) {
+    this.form.inhabitants = inhabitants
+  }
+
+  @action.bound setDiet(diet: Diet) {
+    this.form.diet = diet
+  }
+
+  @action.bound setShopping(shopping: Shopping) {
+    this.form.shopping = shopping
+  }
+
+  @action.bound setDailyCommute(dailyCommute: DailyCommute) {
+    this.form.dailyCommute = dailyCommute
+  }
+
+  @action.bound setOtherCarUsage(otherCarUsage: number) {
+    this.form.otherCarUsage = otherCarUsage
+  }
+
+  @action.bound setCarType(carType: CarType) {
+    this.form.carType = carType
+  }
+
+  @action.bound setFlyingHabit(flyingHabit: FlyingHabit) {
+    this.form.flyingHabit = flyingHabit
   }
 }

@@ -1,12 +1,25 @@
-import { action, makeAutoObservable } from 'mobx'
+import { action, computed, makeAutoObservable } from 'mobx'
 import { RootStore } from './Root.store'
 import { DEV_MODE } from '../constants/envs'
 import { Form, Household, Diet, Shopping, DailyCommute, CarType, FlyingHabit } from '../types/formStore'
+import { FormMap } from '../screens/FormScreen/FormScreen'
 
-export class FormStore {
+export const FormOrder = [
+  'household',
+  'inhabitants',
+  'electricityUsage',
+  'diet',
+  'shopping',
+  'dailyCommute',
+  'otherCarUsage',
+  'carType',
+  'flyingHabit',
+]
+
+export class FormStateStore {
   DEV_MODE = DEV_MODE || false
   rootStore
-  form = {
+  form: Form = {
     household: undefined,
     electricityUsage: undefined,
     inhabitants: undefined,
@@ -14,12 +27,39 @@ export class FormStore {
     shopping: undefined,
     dailyCommute: undefined,
     otherCarUsage: undefined,
+    carType: undefined,
     flyingHabit: undefined,
-  } as Form
+  }
+  currentFormStep: keyof typeof FormMap = 'household'
+
+  get stepIndex() {
+    return FormOrder.indexOf(this.currentFormStep)
+  }
+
+  get isLastStep() {
+    return this.stepIndex === FormOrder.length - 1
+  }
 
   constructor(rootStore: RootStore) {
-    makeAutoObservable(this)
+    makeAutoObservable(this, {
+      stepIndex: computed,
+      isLastStep: computed,
+    })
     this.rootStore = rootStore
+  }
+
+  @action.bound nextStep() {
+    const currentIndex = FormOrder.indexOf(this.currentFormStep)
+    if (currentIndex < FormOrder.length - 1) {
+      this.currentFormStep = FormOrder[currentIndex + 1] as keyof typeof FormMap
+    }
+  }
+
+  @action.bound prevStep() {
+    const currentIndex = FormOrder.indexOf(this.currentFormStep)
+    if (currentIndex > 0) {
+      this.currentFormStep = FormOrder[currentIndex - 1] as keyof typeof FormMap
+    }
   }
 
   @action.bound setHousehold(household: Household) {

@@ -4,4 +4,5 @@ export interface Theme {
   secondary: string
   tertiary: string
   text: string
+  gray: string
 }

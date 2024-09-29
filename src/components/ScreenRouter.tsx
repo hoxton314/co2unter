@@ -9,7 +9,8 @@ import { StoreContext } from '../App'
 import styled from 'styled-components'
 import { dimensions } from '../theme/dimensions'
 import { usePwa } from '../hooks/usePWA'
-import { HeatMapScreen } from "../screens/HeatMapScreen/HeatMapScreen"
+import { HeatMapScreen } from '../screens/HeatMapScreen/HeatMapScreen'
+import { FormResultsScreen } from '../screens/FormResultsScreen/FormResultsScreen'
 
 const RouterContainer = styled.div<{ $isPwa?: boolean }>`
   /* padding: 32px 16px; */
@@ -31,6 +32,7 @@ export const SCREENS = {
   sectorsBreakdown: SectorsBreakdownScreen,
   environmentVsEmission: EnvironmentVsEmissionScreen,
   heatMap: HeatMapScreen,
+  formResults: FormResultsScreen,
 }
 
 export const ScreenRouter: FC = observer(() => {

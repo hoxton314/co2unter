@@ -90,6 +90,8 @@ export class FormStateStore {
     const currentIndex = FormOrder.indexOf(this.currentFormStep)
     if (currentIndex < FormOrder.length - 1) {
       this.currentFormStep = FormOrder[currentIndex + 1] as keyof typeof FormMap
+    } else {
+      this.rootStore.AppState.setCurrentScreen('formResults')
     }
   }
 

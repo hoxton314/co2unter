@@ -1,5 +1,4 @@
 import { styled } from 'styled-components'
-import {Map} from '@vis.gl/react-google-maps';
 
 export const ScreenContainer = styled.div`
   height: 100%;

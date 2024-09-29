@@ -19,6 +19,7 @@ export class AppStateStore {
     makeAutoObservable(this)
     this.rootStore = rootStore
     this.loadCalculatedEmissionFromLocalStorage()
+    this.restoreThemeFromLocalStorage()
   }
 
   @action.bound setTheme(theme: Theme) {

@@ -23,6 +23,6 @@ export const ButtonCont = styled.div`
     flex-direction: column;
     align-items: center;
     svg {
-        margin-bottom: 2px;
+        height: 28px;
     }
 `

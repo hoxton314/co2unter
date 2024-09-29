@@ -16,15 +16,12 @@ export const Navigation: FC = observer(() => {
     <Container $isPwa={isPwa}>
       <ButtonCont onClick={() => store.AppState.setCurrentScreen(store.AppState.prevScreen)}>
         <BackSVG />
-        <p>{returnText}</p>
       </ButtonCont>
       <ButtonCont onClick={() => store.AppState.setCurrentScreen('form')}>
         <QuizSVG />
-        <p>{form}</p>
       </ButtonCont>
       <ButtonCont onClick={() => store.AppState.setCurrentScreen('home')}>
         <HomeSVG />
-        <p>{home}</p>
       </ButtonCont>
     </Container>
   )

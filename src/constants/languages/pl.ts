@@ -7,6 +7,12 @@ export const translations: ITranslations = {
     environmentVsEmission: 'Środowisko vs. emisja CO2',
     heatMap: 'Heatmapa of emisji CO2',
   },
+  WelcomeScreen: {
+    title: 'Witaj w aplikacji CO2TROL!',
+    description: 'Czy chcesz wziąć udział w szybkiej ankiecie, która pomoże Ci zrozumieć Twój wpływ na ślad węglowy?',
+    later: 'Później',
+    yes: 'Tak',
+  },
   Navigation: {
     returnText: 'Powrot',
     form: 'Form',

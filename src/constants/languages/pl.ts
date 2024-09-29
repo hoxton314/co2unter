@@ -8,7 +8,7 @@ export const translations: ITranslations = {
     heatMap: 'Heatmapa of emisji CO2',
   },
   WelcomeScreen: {
-    title: 'Witaj w aplikacji CO2TROL!',
+    title: 'Witaj w aplikacji CO2NTROL!',
     description: 'Czy chcesz wziąć udział w szybkiej ankiecie, która pomoże Ci zrozumieć Twój wpływ na ślad węglowy?',
     later: 'Później',
     yes: 'Tak',

@@ -189,4 +189,10 @@ export const translations: ITranslations = {
       ],
     },
   },
+  CalculatedEmissions: {
+    oldTreesAbsorption: 'Ilość starych drzew potrzebnych do pochłonięcia emisji CO2',
+    mediumTreeAbsorption: 'Ilość średnich drzew potrzebnych do pochłonięcia emisji CO2',
+    smallTreeAbsorption: 'Ilość małych drzew potrzebnych do pochłonięcia emisji CO2',
+    totalEmissions: 'Całkowita emisja CO2',
+  },
 }

@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react'
 import { FC, useContext, useEffect, useState } from 'react'
-import { Container } from './FormResultsScreen.styles'
+import { Container, ErrorMessageBox } from './FormResultsScreen.styles'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
 import { axiosInstance } from '../../methods/axiosConfig'
 import { StoreContext } from '../../App'
@@ -28,16 +28,37 @@ export const FormResultsScreen: FC = observer(() => {
 
   useEffect(() => {
     void fetchResults()
+    //eslint-disable-next-line
   }, [])
+
+  const isValid =
+    calculatedEmission?.oldTreesAbsorption &&
+    calculatedEmission?.mediumTreeAbsorption &&
+    calculatedEmission?.smallTreeAbsorption &&
+    calculatedEmission?.totalEmissions
+
+  const objectKeys = isValid ? Object.keys(calculatedEmission) : []
 
   return (
     <Container>
-      {isLoading || !calculatedEmission?.mediumTreeAbsorption ? (
+      {isLoading ? (
         <LoadingSpinner />
       ) : (
         <div>
           <h1>Results</h1>
-          {JSON.stringify(calculatedEmission)}
+
+          {objectKeys.length && isValid ? (
+            objectKeys.map((key) => (
+              <div key={key}>
+                <p>{key}</p>
+                {calculatedEmission !== undefined && (
+                  <p>{calculatedEmission[key as keyof typeof calculatedEmission]}</p>
+                )}
+              </div>
+            ))
+          ) : (
+            <ErrorMessageBox>Something went wrong</ErrorMessageBox>
+          )}
         </div>
       )}
     </Container>

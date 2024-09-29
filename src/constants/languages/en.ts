@@ -189,4 +189,10 @@ export const translations: ITranslations = {
       ],
     },
   },
+  CalculatedEmissions: {
+    oldTreesAbsorption: 'Amount of old trees needed to absorb CO2 emissions',
+    mediumTreeAbsorption: 'Amount of medium trees needed to absorb CO2 emissions',
+    smallTreeAbsorption: 'Amount of small trees needed to absorb CO2 emissions',
+    totalEmissions: 'Total CO2 emissions',
+  },
 }

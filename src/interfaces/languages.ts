@@ -193,5 +193,6 @@ export interface ITranslations {
     mediumTreeAbsorption: string
     smallTreeAbsorption: string
     totalEmissions: string
+    parkAbsorption: string
   }
 }

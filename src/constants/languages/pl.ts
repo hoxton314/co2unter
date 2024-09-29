@@ -194,5 +194,6 @@ export const translations: ITranslations = {
     mediumTreeAbsorption: 'Ilość średnich drzew potrzebnych do pochłonięcia emisji CO2',
     smallTreeAbsorption: 'Ilość małych drzew potrzebnych do pochłonięcia emisji CO2',
     totalEmissions: 'Całkowita emisja CO2',
+    parkAbsorption: 'Park o redukcji zanieczyszczeń najbardziej zbliżonej do tej ilości CO2',
   },
 }

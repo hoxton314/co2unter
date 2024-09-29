@@ -3,7 +3,7 @@ export const translations: ITranslations = {
   HomeScreen: {
     welcome: 'Ekran powitalny (temp)',
     testEmission: 'Jak moje życie wpływa na emisję CO2?',
-    sectorsBreakdown: 'Jaki wpływ na emisję CO2 mają różne sektory życia?',
+    sectorsBreakdown: 'Jak aspekty życia wpływają na emisje?',
     environmentVsEmission: 'Środowisko vs. emisja CO2',
     heatMap: 'Heatmapa of emisji CO2',
   },

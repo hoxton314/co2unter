@@ -3,7 +3,7 @@ import { FC, useContext } from "react"
 import { ButtonCont, Container } from "./Navigation.styles"
 import { usePwa } from '../../hooks/usePWA'
 import { StoreContext } from "../../App"
-import { navTypeSvgs} from "../../screens/FormScreen/icons"
+import { navTypeSvgs } from "../../screens/FormScreen/icons"
 
 export const Navigation: FC = observer(() => {
   const { isPwa } = usePwa()

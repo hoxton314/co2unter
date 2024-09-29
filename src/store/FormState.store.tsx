@@ -84,6 +84,8 @@ export class FormStateStore {
       isLastStep: computed,
     })
     this.rootStore = rootStore
+
+    this.loadFormFromLocalStorage()
   }
 
   @action.bound nextStep() {
@@ -104,37 +106,66 @@ export class FormStateStore {
 
   @action.bound setHousehold(household: Household) {
     this.form.household = household
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setElectricityUsage(electricityUsage: number | ElectricityPresets) {
     this.form.electricityUsage = electricityUsage
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setInhabitants(inhabitants: number) {
     this.form.inhabitants = inhabitants
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setDiet(diet: Diet) {
     this.form.diet = diet
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setShopping(shopping: Shopping) {
     this.form.shopping = shopping
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setDailyCommute(dailyCommute: DailyCommute) {
     this.form.dailyCommute = dailyCommute
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setOtherCarUsage(otherCarUsage: number | CarUsage) {
     this.form.otherCarUsage = otherCarUsage
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setCarType(carType: CarType) {
     this.form.carType = carType
+
+    this.cacheFormInLocalStorage()
   }
 
   @action.bound setFlyingHabit(flyingHabit: FlyingHabit) {
     this.form.flyingHabit = flyingHabit
+
+    this.cacheFormInLocalStorage()
+  }
+
+  @action.bound cacheFormInLocalStorage() {
+    localStorage.setItem('form', JSON.stringify(this.form))
+  }
+
+  @action.bound loadFormFromLocalStorage() {
+    const form = localStorage.getItem('form')
+    if (form) {
+      this.form = JSON.parse(form)
+    }
   }
 }

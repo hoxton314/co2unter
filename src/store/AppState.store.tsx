@@ -20,6 +20,7 @@ export class AppStateStore {
   constructor(rootStore: RootStore) {
     makeAutoObservable(this)
     this.rootStore = rootStore
+    this.loadCalculatedEmissionFromLocalStorage()
   }
 
   @action.bound setTheme(theme: Theme) {
@@ -37,6 +38,19 @@ export class AppStateStore {
 
   @action.bound setCalculatedEmission(emission: ICalculatedEmission) {
     this.calculatedEmission = emission
+
+    this.cacheCalculatedEmission()
+  }
+
+  @action.bound cacheCalculatedEmission() {
+    localStorage.setItem('calculatedEmission', JSON.stringify(this.calculatedEmission))
+  }
+
+  @action.bound loadCalculatedEmissionFromLocalStorage() {
+    const emission = localStorage.getItem('calculatedEmission')
+    if (emission) {
+      this.calculatedEmission = JSON.parse(emission)
+    }
   }
 
   @action.bound setSectors(sectors: ISectors) {

@@ -3,7 +3,7 @@ export const translations: ITranslations = {
   HomeScreen: {
     welcome: 'Welcome screen (temp)',
     testEmission: 'What is my impact on CO2 emission?',
-    sectorsBreakdown: 'What impact do different sectors of life have on CO2 emissions?',
+    sectorsBreakdown: 'How different sectors impact CO2 emissions?',
     environmentVsEmission: 'Environment vs. CO2 emissions',
     heatMap: 'Heatmap of CO2 emissions',
   },

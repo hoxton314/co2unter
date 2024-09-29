@@ -15,6 +15,8 @@ import { StoreContext } from '../../App'
 import { ICalculatedEmission } from '../../types/calculatedEmission'
 import { getIcon } from './icons'
 
+const gridKeys = ['oldTreesAbsorption', 'mediumTreeAbsorption', 'seedlingAbsorption', 'totalEmissions']
+
 export const FormResultsScreen: FC = observer(() => {
   const store = useContext(StoreContext)
   const { calculatedEmission } = store.AppState
@@ -65,22 +67,18 @@ export const FormResultsScreen: FC = observer(() => {
 
           {objectKeys.length ? (
             <ResultsContainer>
-              {objectKeys.map((key) => {
-                if (key === 'closestPark') return
+              {gridKeys.map((key) => (
+                <ResultsItem key={key}>
+                  <ResultsItemTitle>{trans[key as keyof typeof trans]}</ResultsItemTitle>
+                  {calculatedEmission !== undefined && (
+                    <ResultsItemValue>
+                      {Math.floor(calculatedEmission[key as keyof typeof calculatedEmission] || 0)}
+                    </ResultsItemValue>
+                  )}
 
-                return (
-                  <ResultsItem key={key}>
-                    <ResultsItemTitle>{trans[key as keyof typeof trans]}</ResultsItemTitle>
-                    {calculatedEmission !== undefined && (
-                      <ResultsItemValue>
-                        {Math.floor(calculatedEmission[key as keyof typeof calculatedEmission] || 0)}
-                      </ResultsItemValue>
-                    )}
-
-                    <ResultsItemIcon>{getIcon(key)}</ResultsItemIcon>
-                  </ResultsItem>
-                )
-              })}
+                  <ResultsItemIcon>{getIcon(key)}</ResultsItemIcon>
+                </ResultsItem>
+              ))}
             </ResultsContainer>
           ) : (
             <ErrorMessageBox>{error || 'Something went wrong'}</ErrorMessageBox>

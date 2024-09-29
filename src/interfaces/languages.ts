@@ -6,11 +6,17 @@ export interface ITranslations {
     environmentVsEmission: string
     heatMap: string
   }
+  WelcomeScreen: {
+    title: string
+    description: string
+    later: string
+    yes: string
+  }
   Navigation: {
-    returnText: string,
-    form: string,
-    home: string,
-  },
+    returnText: string
+    form: string
+    home: string
+  }
   FormScreen: {
     houseSize: {
       title: string

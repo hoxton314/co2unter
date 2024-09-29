@@ -7,6 +7,12 @@ export const translations: ITranslations = {
     environmentVsEmission: 'Environment vs. CO2 emissions',
     heatMap: 'Heatmap of CO2 emissions',
   },
+  WelcomeScreen: {
+    title: 'Welcome to CO2TROL app!',
+    description: 'Do you wish to take a quick questionnaire to help you understand your carbon footprint?',
+    later: 'Later',
+    yes: 'Yes',
+  },
   Navigation: {
     returnText: 'Return',
     form: 'Form',

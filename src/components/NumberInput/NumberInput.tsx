@@ -29,15 +29,21 @@ export const NumberInput: FC<NumberInputProps> = observer((props) => {
     <Container>
       {!!controls && (
         <ValueButton onClick={() => handleChange(value - 1)}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <svg width="24" height="24" viewBox="0 0 24 24">
             <path fill="currentColor" d="M0 10h24v4h-24z" />
           </svg>
         </ValueButton>
       )}
-      <Input type="number" {...props} onChange={(e) => handleChange(parseInt(e.target.value))} />
+      <Input
+        pattern="[0-9]*"
+        inputMode="numeric"
+        type="number"
+        {...props}
+        onChange={(e) => handleChange(parseInt(e.target.value))}
+      />
       {!!controls && (
         <ValueButton onClick={() => handleChange(value + 1)}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <svg width="24" height="24" viewBox="0 0 24 24">
             <path fill="currentColor" d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z" />
           </svg>
         </ValueButton>

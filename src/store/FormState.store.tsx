@@ -1,8 +1,33 @@
 import { action, computed, makeAutoObservable } from 'mobx'
 import { RootStore } from './Root.store'
 import { DEV_MODE } from '../constants/envs'
-import { Form, Household, Diet, Shopping, DailyCommute, CarType, FlyingHabit } from '../types/formStore'
+import {
+  Form,
+  Household,
+  Diet,
+  Shopping,
+  DailyCommute,
+  CarType,
+  FlyingHabit,
+  ElectricityPresets,
+  CarUsage,
+} from '../types/formStore'
 import { FormMap } from '../screens/FormScreen/FormScreen'
+
+const electricityMap = {
+  veryLow: 10,
+  low: 15,
+  moderate: 20,
+  big: 30,
+  veryBig: 50,
+}
+
+const carUsageMap = {
+  never: 0,
+  rarely: 5000,
+  occasionally: 10000,
+  regularly: 15000,
+}
 
 export const FormOrder = [
   'household',
@@ -30,6 +55,19 @@ export class FormStateStore {
     carType: undefined,
     flyingHabit: undefined,
   }
+
+  get parsedForm() {
+    return {
+      ...this.form,
+      electricityUsage:
+        typeof this.form.electricityUsage === 'string'
+          ? electricityMap[this.form.electricityUsage]
+          : this.form.electricityUsage,
+      otherCarUsage:
+        typeof this.form.otherCarUsage === 'string' ? carUsageMap[this.form.otherCarUsage] : this.form.otherCarUsage,
+    }
+  }
+
   currentFormStep: keyof typeof FormMap = 'household'
 
   get stepIndex() {
@@ -52,6 +90,8 @@ export class FormStateStore {
     const currentIndex = FormOrder.indexOf(this.currentFormStep)
     if (currentIndex < FormOrder.length - 1) {
       this.currentFormStep = FormOrder[currentIndex + 1] as keyof typeof FormMap
+    } else {
+      this.rootStore.AppState.setCurrentScreen('formResults')
     }
   }
 
@@ -66,7 +106,7 @@ export class FormStateStore {
     this.form.household = household
   }
 
-  @action.bound setElectricityUsage(electricityUsage: number) {
+  @action.bound setElectricityUsage(electricityUsage: number | ElectricityPresets) {
     this.form.electricityUsage = electricityUsage
   }
 
@@ -86,7 +126,7 @@ export class FormStateStore {
     this.form.dailyCommute = dailyCommute
   }
 
-  @action.bound setOtherCarUsage(otherCarUsage: number) {
+  @action.bound setOtherCarUsage(otherCarUsage: number | CarUsage) {
     this.form.otherCarUsage = otherCarUsage
   }
 

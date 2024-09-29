@@ -9,14 +9,16 @@ import { StoreContext } from '../App'
 import styled from 'styled-components'
 import { dimensions } from '../theme/dimensions'
 import { usePwa } from '../hooks/usePWA'
+import { HeatMapScreen } from '../screens/HeatMapScreen/HeatMapScreen'
+import { FormResultsScreen } from '../screens/FormResultsScreen/FormResultsScreen'
 
 const RouterContainer = styled.div<{ $isPwa?: boolean }>`
-  padding: 32px 16px;
+  /* padding: 32px 16px; */
   width: 100%;
   height: ${({ $isPwa }) =>
-    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0px'})`};
   max-height: ${({ $isPwa }) =>
-    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0'})`};
+    `calc(100svh  - ${dimensions.barHeight} - ${dimensions.barHeight} - ${$isPwa ? '20px' : '0px'})`};
   max-width: 600px;
 
   overflow-y: auto;
@@ -29,6 +31,8 @@ export const SCREENS = {
   welcome: WelcomeScreen,
   sectorsBreakdown: SectorsBreakdownScreen,
   environmentVsEmission: EnvironmentVsEmissionScreen,
+  heatMap: HeatMapScreen,
+  formResults: FormResultsScreen,
 }
 
 export const ScreenRouter: FC = observer(() => {

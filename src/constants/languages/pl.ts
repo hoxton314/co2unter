@@ -5,6 +5,7 @@ export const translations: ITranslations = {
     testEmission: 'Jak moje życie wpływa na emisję CO2?',
     sectorsBreakdown: 'Jaki wpływ na emisję CO2 mają różne sektory życia?',
     environmentVsEmission: 'Środowisko vs. emisja CO2',
+    heatMap: 'Heatmapa of emisji CO2',
   },
   FormScreen: {
     houseSize: {
@@ -87,19 +88,19 @@ export const translations: ITranslations = {
       options: [
         {
           label: 'Prawie wcale',
-          name: 'neverShopping',
+          name: 'never',
         },
         {
           label: 'Rzadko',
-          name: 'rarelyShopping',
+          name: 'rarely',
         },
         {
           label: 'Od czasu do czasu',
-          name: 'occasionallyShopping',
+          name: 'occasionally',
         },
         {
           label: 'Regularnie',
-          name: 'regularlyShopping',
+          name: 'regularly',
         },
       ],
     },
@@ -129,19 +130,19 @@ export const translations: ITranslations = {
       options: [
         {
           label: 'Nie mam/używam samochodu',
-          name: 'noCar',
+          name: 'never',
         },
         {
           label: 'Rzadko (20 km)',
-          name: 'rarelyCarUsage',
+          name: 'rarely',
         },
         {
           label: 'Sporadycznie (100 km)',
-          name: 'occasionallyCarUsage',
+          name: 'occasionally',
         },
         {
           label: 'Regularnie (250 km)',
-          name: 'regularlyCarUsage',
+          name: 'regularly',
         },
         {
           label: 'Znam odległość (w km): ',
@@ -175,36 +176,15 @@ export const translations: ITranslations = {
       options: [
         {
           label: 'Rzadko (do jednego lotu w dwie strony rocznie)',
-          name: 'rarelyFlying',
+          name: 'rarely',
         },
         {
           label: 'Sporadycznie (2-3 loty rocznie)',
-          name: 'occasionallyFlying',
+          name: 'occasionally',
         },
         {
           label: 'Regularnie (więcej lotów, loty międzykontynentalne)',
-          name: 'regularlyFlying',
-        },
-        {
-          label: 'Niestandardowa ilość',
-          name: 'customFlightNumber',
-        },
-      ],
-    },
-    flyingHabitCustom: {
-      title: 'Wprowadź kwoty dla każdego rodzaju lotów odbywanych w ciągu roku: ',
-      options: [
-        {
-          label: 'Krótki zasięg (do 3 godzin)',
-          name: 'shortRange',
-        },
-        {
-          label: 'Średniego zasięgu (od 4 do 7 godzin)',
-          name: 'midRange',
-        },
-        {
-          label: 'Daleki zasięg (ponad 8 godzin)',
-          name: 'longRange',
+          name: 'regularly',
         },
       ],
     },

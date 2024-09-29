@@ -12,6 +12,8 @@ export const FormResultsScreen: FC = observer(() => {
 
   const [isLoading, setIsLoading] = useState(true)
 
+  const [error, setError] = useState('')
+
   const fetchResults = async () => {
     try {
       const res = await axiosInstance.post('/calculate-emission', parsedForm)
@@ -20,6 +22,8 @@ export const FormResultsScreen: FC = observer(() => {
         setIsLoading(false)
 
         console.log(res)
+      } else {
+        setError(res.data.error)
       }
     } catch (error) {
       console.log(error)
@@ -57,7 +61,7 @@ export const FormResultsScreen: FC = observer(() => {
               </div>
             ))
           ) : (
-            <ErrorMessageBox>Something went wrong</ErrorMessageBox>
+            <ErrorMessageBox> {error || 'Something went wrong'} </ErrorMessageBox>
           )}
         </div>
       )}

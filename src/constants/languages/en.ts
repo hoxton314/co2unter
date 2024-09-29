@@ -7,6 +7,17 @@ export const translations: ITranslations = {
     environmentVsEmission: 'Environment vs. CO2 emissions',
     heatMap: 'Heatmap of CO2 emissions',
   },
+  WelcomeScreen: {
+    title: 'Welcome to CO2TROL app!',
+    description: 'Do you wish to take a quick questionnaire to help you understand your carbon footprint?',
+    later: 'Later',
+    yes: 'Yes',
+  },
+  Navigation: {
+    returnText: 'Return',
+    form: 'Form',
+    home: 'Home',
+  },
   FormScreen: {
     houseSize: {
       title: 'How big is your house?',
@@ -192,7 +203,7 @@ export const translations: ITranslations = {
   CalculatedEmissions: {
     oldTreesAbsorption: 'Amount of old trees needed to absorb CO2 emissions',
     mediumTreeAbsorption: 'Amount of medium trees needed to absorb CO2 emissions',
-    smallTreeAbsorption: 'Amount of small trees needed to absorb CO2 emissions',
+    seedlingAbsorption: 'Amount of small trees needed to absorb CO2 emissions',
     totalEmissions: 'Total CO2 emissions',
     parkAbsorption: 'Park with pollution reduction closest to this amount of CO2',
   },

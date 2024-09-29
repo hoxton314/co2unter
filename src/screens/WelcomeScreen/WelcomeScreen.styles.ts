@@ -1,6 +1,8 @@
 import { styled } from 'styled-components'
 
 export const ScreenContainer = styled.div`
+  height: 100%;
+  padding: 32px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,10 +14,17 @@ export const ScreenContainer = styled.div`
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 500;
     margin: 0px;
     width: 100%;
     text-align: center;
+  }
+
+  svg {
+    margin: 16px 0;
+    color: ${({ theme }) => theme.secondary};
+    width: 60%;
   }
 `
 

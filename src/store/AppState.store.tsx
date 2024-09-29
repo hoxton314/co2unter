@@ -12,7 +12,7 @@ export class AppStateStore {
   theme = 'light' as Theme
   currentScreen: keyof typeof SCREENS = 'welcome'
 
-  calculatedEmission: ICalculatedEmission | undefined = undefined
+  calculatedEmission: ICalculatedEmission = {}
 
   constructor(rootStore: RootStore) {
     makeAutoObservable(this)

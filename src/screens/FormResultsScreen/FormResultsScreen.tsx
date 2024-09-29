@@ -38,13 +38,12 @@ export const FormResultsScreen: FC = observer(() => {
     //eslint-disable-next-line
   }, [])
 
-  const isValid =
-    calculatedEmission?.oldTreesAbsorption &&
-    calculatedEmission?.mediumTreeAbsorption &&
-    calculatedEmission?.smallTreeAbsorption &&
-    calculatedEmission?.totalEmissions
+  const objectKeys = Object.keys(calculatedEmission)
 
-  const objectKeys = isValid ? Object.keys(calculatedEmission) : []
+  useEffect(() => {
+    console.log(calculatedEmission)
+    console.log(objectKeys)
+  }, [calculatedEmission, objectKeys])
 
   return (
     <Container>
@@ -54,7 +53,7 @@ export const FormResultsScreen: FC = observer(() => {
         <div>
           <h1>Results</h1>
 
-          {objectKeys.length && isValid ? (
+          {objectKeys.length ? (
             objectKeys.map((key) => (
               <div key={key}>
                 <p>{key}</p>

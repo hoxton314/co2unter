@@ -22,8 +22,8 @@ export const TileContainer = styled.div`
     ${({ theme }) => `
     color: ${theme.primary};
     padding: 10px 0;
-    height: 200px;
-    width: auto;
+    height: auto;
+    width: 50%;
   `}
   }
 
@@ -47,7 +47,7 @@ export const TileBox = styled.div`
   align-items: center;
 `
 export const Text = styled.p`
-  font-size: 20px;
+  font-size: 16px;
   @media (min-width: 500px) {
     font-size: 14px;
     grid-template-columns: 1fr 1fr;

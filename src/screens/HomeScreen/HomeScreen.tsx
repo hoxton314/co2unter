@@ -21,30 +21,17 @@ export const HomeScreen: FC = observer(() => {
     <ScreenContainer>
       <FlexContainer>
         <FlexItem onClick={() => store.AppState.setCurrentScreen('form')}>
-          <div>
             <h3> {testEmission} </h3>
-          </div>
           <MeSVG />
         </FlexItem>
 
         <FlexItem onClick={() => store.AppState.setCurrentScreen('sectorsBreakdown')}>
-          <div>
             <h3> {sectorsBreakdown} </h3>
-          </div>
           <SectorsSVG />
         </FlexItem>
 
-        <FlexItem onClick={() => store.AppState.setCurrentScreen('environmentVsEmission')}>
-          <div>
-            <h3> {environmentVsEmission} </h3>
-          </div>
-          <EnviromentSVG />
-        </FlexItem>
-
         <FlexItem onClick={() => store.AppState.setCurrentScreen('heatMap')}>
-          <div>
             <h3> {heatMap} </h3>
-          </div>
           <MapSVG />
         </FlexItem>
       </FlexContainer>

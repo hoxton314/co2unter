@@ -11,6 +11,7 @@ export class AppStateStore {
   rootStore
   theme = 'light' as Theme
   currentScreen: keyof typeof SCREENS = 'welcome'
+  prevScreen: keyof typeof SCREENS = 'welcome'
 
   calculatedEmission: ICalculatedEmission = {}
 
@@ -28,6 +29,7 @@ export class AppStateStore {
   }
 
   @action.bound setCurrentScreen(screen: keyof typeof SCREENS) {
+    this.prevScreen = this.currentScreen
     this.currentScreen = screen
   }
 

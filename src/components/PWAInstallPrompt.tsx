@@ -23,7 +23,7 @@ const Prompt = styled.div<{ $shouldShow: boolean }>`
   height: 200px;
   max-width: 320px;
   left: calc(50%);
-  top: calc(50% - 100px);
+  top: calc(50% - 80px);
   transform: translateX(-50%);
 
   h1 {

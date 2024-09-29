@@ -18,10 +18,10 @@ export const WelcomeScreen: FC = observer(() => {
       </svg>
 
       <ActionWrapper>
-        <Button type="primary" width="120px" onClick={() => store.AppState.setCurrentScreen('home')}>
+        <Button type="primary" width="100px" onClick={() => store.AppState.setCurrentScreen('home')}>
           {trans.later}
         </Button>
-        <Button type="secondary" width="120px" onClick={() => store.AppState.setCurrentScreen('form')}>
+        <Button type="secondary" width="100px" onClick={() => store.AppState.setCurrentScreen('form')}>
           {trans.yes}
         </Button>
       </ActionWrapper>

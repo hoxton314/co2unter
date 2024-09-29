@@ -204,5 +204,13 @@ export interface ITranslations {
     mediumTreeAbsorption: string
     seedlingAbsorption: string
     totalEmissions: string
+    parkAbsorption: string
+    services: string
+    transport: string
+    events: string
+    user: string
+    formButton: string
+    formAgain: string
+    formFirstTime: string
   }
 }

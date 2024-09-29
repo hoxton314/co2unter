@@ -8,7 +8,7 @@ export const translations: ITranslations = {
     heatMap: 'Heatmapa of emisji CO2',
   },
   WelcomeScreen: {
-    title: 'Witaj w aplikacji CO2TROL!',
+    title: 'Witaj w aplikacji CO2NTROL!',
     description: 'Czy chcesz wziąć udział w szybkiej ankiecie, która pomoże Ci zrozumieć Twój wpływ na ślad węglowy?',
     later: 'Później',
     yes: 'Tak',
@@ -205,5 +205,13 @@ export const translations: ITranslations = {
     mediumTreeAbsorption: 'Ilość średnich drzew potrzebnych do pochłonięcia emisji CO2',
     seedlingAbsorption: 'Ilość małych drzew potrzebnych do pochłonięcia emisji CO2',
     totalEmissions: 'Całkowita emisja CO2 (t/rok)',
+    parkAbsorption: 'Park o redukcji zanieczyszczeń najbardziej zbliżonej do tej ilości CO2',
+    services: 'Usługi',
+    transport: 'Transport',
+    events: 'Wydarzenia',
+    user: 'Dane użytkownika',
+    formButton: 'Wypełnij formularz',
+    formAgain: 'Chcesz zmienić swoje odpowiedzi?',
+    formFirstTime: 'Jeśli chcesz sprawdzić Twoją emisję CO2, to naciśnij poniżej!',
   },
 }

@@ -8,7 +8,7 @@ export const translations: ITranslations = {
     heatMap: 'Heatmap of CO2 emissions',
   },
   WelcomeScreen: {
-    title: 'Welcome to CO2TROL app!',
+    title: 'Welcome to CO2NTROL app!',
     description: 'Do you wish to take a quick questionnaire to help you understand your carbon footprint?',
     later: 'Later',
     yes: 'Yes',
@@ -205,5 +205,13 @@ export const translations: ITranslations = {
     mediumTreeAbsorption: 'Amount of medium trees needed to absorb CO2 emissions',
     seedlingAbsorption: 'Amount of small trees needed to absorb CO2 emissions',
     totalEmissions: 'Total CO2 emissions (t/year)',
+    parkAbsorption: 'Park with pollution reduction closest to this amount of CO2',
+    services: 'Services',
+    transport: 'Transport',
+    events: 'Events',
+    user: 'User data',
+    formButton: 'Fill out the form',
+    formAgain: 'Do you want to change your answers?',
+    formFirstTime: 'If you want to check your CO2 emission click here!',
   },
 }

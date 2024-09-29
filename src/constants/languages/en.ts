@@ -204,6 +204,6 @@ export const translations: ITranslations = {
     oldTreesAbsorption: 'Amount of old trees needed to absorb CO2 emissions',
     mediumTreeAbsorption: 'Amount of medium trees needed to absorb CO2 emissions',
     seedlingAbsorption: 'Amount of small trees needed to absorb CO2 emissions',
-    totalEmissions: 'Total CO2 emissions',
+    totalEmissions: 'Total CO2 emissions (t/year)',
   },
 }

@@ -7,6 +7,11 @@ export const translations: ITranslations = {
     environmentVsEmission: 'Environment vs. CO2 emissions',
     heatMap: 'Heatmap of CO2 emissions',
   },
+  Navigation: {
+    returnText: 'Return',
+    form: 'Form',
+    home: 'Home',
+  },
   FormScreen: {
     houseSize: {
       title: 'How big is your house?',

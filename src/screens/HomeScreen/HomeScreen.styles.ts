@@ -8,32 +8,25 @@ export const ScreenContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 64px;
 `
 
 export const FlexContainer = styled.div`
-  position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 `
 
 export const FlexItem = styled.div<{ $selected?: boolean }>`
-  box-sizing: border-box;
-  width: 40%;
+  aspect-ratio: 2.3;
   display: flex;
-  flex-direction: column;
   text-align: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 10px;
-  min-height: 200px;
-  margin: 8px;
   border-radius: 12px;
-
+  margin: 12px;
+  gap: 10px;
 
   background-color: ${({ theme }) => theme.tertiary};
   color: ${({ theme }) => theme.secondary};
@@ -43,8 +36,8 @@ export const FlexItem = styled.div<{ $selected?: boolean }>`
   `}
 
   ${({ $selected, theme }) =>
-  $selected &&
-  css`
+    $selected &&
+    css`
       background-color: ${theme.secondary};
       color: ${theme.tertiary};
       -webkit-box-shadow: inset 0px 8px 24px 0px rgba(30, 30, 30, 0.6);
@@ -55,13 +48,6 @@ export const FlexItem = styled.div<{ $selected?: boolean }>`
 
   cursor: pointer;
 
-  div {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   h3 {
     font-size: 16px;
     font-weight: 500;
@@ -70,7 +56,7 @@ export const FlexItem = styled.div<{ $selected?: boolean }>`
 
   svg {
     color: inherit;
-    width: 70%;
+    width: 20%;
     aspect-ratio: 1;
   }
 `

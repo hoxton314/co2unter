@@ -16,6 +16,7 @@ export class TranslationsStore {
   constructor(rootStore: RootStore) {
     makeAutoObservable(this)
     this.rootStore = rootStore
+    this.loadLanguageFromLocalStorage()
   }
 
   @action.bound setLanguage(language: languages): void {
@@ -23,6 +24,19 @@ export class TranslationsStore {
     this.translations = {
       ...languagesList['en'],
       ...languagesList[language],
+    }
+
+    this.cacheLanguageInLocalStorage()
+  }
+
+  @action.bound cacheLanguageInLocalStorage(): void {
+    localStorage.setItem('language', this.language)
+  }
+
+  @action.bound loadLanguageFromLocalStorage(): void {
+    const language = localStorage.getItem('language') as languages
+    if (language === 'en' || language === 'pl') {
+      this.setLanguage(language)
     }
   }
 }

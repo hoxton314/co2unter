@@ -21,14 +21,18 @@ export class AppStateStore {
     makeAutoObservable(this)
     this.rootStore = rootStore
     this.loadCalculatedEmissionFromLocalStorage()
+    this.restoreThemeFromLocalStorage()
   }
 
   @action.bound setTheme(theme: Theme) {
     this.theme = theme
+    localStorage.setItem('theme', theme)
   }
 
   @action.bound toggleTheme() {
-    this.theme = this.theme === 'light' ? 'dark' : 'light'
+    const theme = this.theme === 'light' ? 'dark' : 'light'
+    this.theme = theme
+    localStorage.setItem('theme', theme)
   }
 
   @action.bound setCurrentScreen(screen: keyof typeof SCREENS) {
@@ -50,6 +54,13 @@ export class AppStateStore {
     const emission = localStorage.getItem('calculatedEmission')
     if (emission) {
       this.calculatedEmission = JSON.parse(emission)
+    }
+  }
+
+  @action.bound restoreThemeFromLocalStorage() {
+    const theme = localStorage.getItem('theme')
+    if (theme === 'dark' || theme === 'light') {
+      this.theme = theme as Theme
     }
   }
 

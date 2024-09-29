@@ -9,6 +9,7 @@ import { StoreContext } from '../App'
 import styled from 'styled-components'
 import { dimensions } from '../theme/dimensions'
 import { usePwa } from '../hooks/usePWA'
+import { HeatMapScreen } from "../screens/HeatMapScreen/HeatMapScreen"
 
 const RouterContainer = styled.div<{ $isPwa?: boolean }>`
   /* padding: 32px 16px; */
@@ -29,6 +30,7 @@ export const SCREENS = {
   welcome: WelcomeScreen,
   sectorsBreakdown: SectorsBreakdownScreen,
   environmentVsEmission: EnvironmentVsEmissionScreen,
+  heatMap: HeatMapScreen,
 }
 
 export const ScreenRouter: FC = observer(() => {

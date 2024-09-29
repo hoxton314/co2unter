@@ -45,7 +45,7 @@ export const FormResultsScreen: FC = observer(() => {
 
   return (
     <Container>
-      {isLoading ? (
+      {isLoading && !error ? (
         <LoadingSpinner />
       ) : (
         <div>

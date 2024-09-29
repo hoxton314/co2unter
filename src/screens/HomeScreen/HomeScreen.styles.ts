@@ -24,13 +24,14 @@ export const FlexContainer = styled.div`
 export const FlexItem = styled.div<{ $selected?: boolean }>`
   box-sizing: border-box;
   width: 40%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  min-height: 200px;
+  flex-grow: 1;
   margin: 8px;
   border-radius: 12px;
 

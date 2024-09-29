@@ -4,6 +4,7 @@ export interface ITranslations {
     testEmission: string
     sectorsBreakdown: string
     environmentVsEmission: string
+    heatMap: string
   }
   FormScreen: {
     houseSize: {

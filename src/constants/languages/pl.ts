@@ -5,6 +5,7 @@ export const translations: ITranslations = {
     testEmission: 'Jak moje życie wpływa na emisję CO2?',
     sectorsBreakdown: 'Jaki wpływ na emisję CO2 mają różne sektory życia?',
     environmentVsEmission: 'Środowisko vs. emisja CO2',
+    heatMap: 'Heatmapa of emisji CO2',
   },
   FormScreen: {
     houseSize: {

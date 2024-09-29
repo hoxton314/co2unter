@@ -206,5 +206,9 @@ export const translations: ITranslations = {
     seedlingAbsorption: 'Amount of small trees needed to absorb CO2 emissions',
     totalEmissions: 'Total CO2 emissions',
     parkAbsorption: 'Park with pollution reduction closest to this amount of CO2',
+    services: 'Services',
+    transport: 'Transport',
+    events: 'Events',
+    user: 'User data',
   },
 }

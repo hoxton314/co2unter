@@ -70,7 +70,7 @@ export const FormResultsScreen: FC = observer(() => {
               {gridKeys.map((key) => (
                 <ResultsItem key={key}>
                   <ResultsItemTitle>{trans[key as keyof typeof trans]}</ResultsItemTitle>
-                  {calculatedEmission !== undefined && (
+                  {calculatedEmission !== undefined && typeof calculatedEmission === 'number' && (
                     <ResultsItemValue>
                       {Math.floor(calculatedEmission[key as keyof typeof calculatedEmission] || 0)}
                     </ResultsItemValue>

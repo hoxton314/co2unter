@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react'
-import { FC, useState } from 'react'
+import { FC, useContext, useState } from 'react'
 import styled from 'styled-components'
 import { Emission } from '../screens/SectorsBreakdownScreen/TileVariants/Emission'
 import { Saplings } from '../screens/SectorsBreakdownScreen/TileVariants/Saplings'
@@ -7,6 +7,8 @@ import { MediumTrees } from '../screens/SectorsBreakdownScreen/TileVariants/Medi
 import { OldTrees } from '../screens/SectorsBreakdownScreen/TileVariants/OldTrees'
 import { Parks } from '../screens/SectorsBreakdownScreen/TileVariants/Parks'
 import { TileSwapperProps } from '../types/TileSwapper'
+import { FormTile } from '../screens/SectorsBreakdownScreen/TileVariants/FormTile'
+import { StoreContext } from '../App'
 
 export const Tile = styled.div`
   aspect-ratio: 1;
@@ -33,18 +35,22 @@ export const Tile = styled.div`
 `
 
 export const TileSwapper: FC<TileSwapperProps> = observer((props) => {
+  const store = useContext(StoreContext)
   const Tiles =
-    props.sectorName === 'user'
-      ? {
-          emission: Emission,
-          saplings: Saplings,
-        }
+    props.sectorType === 'user'
+      ? Object.entries(store.AppState.calculatedEmission).length
+        ? {
+            emission: Emission,
+            saplings: Saplings,
+            parks: Parks,
+            form: FormTile,
+          }
+        : { form: FormTile }
       : {
           emission: Emission,
           saplings: Saplings,
           mediumTrees: MediumTrees,
           OldTrees: OldTrees,
-          parks: Parks,
         }
   const components = Object.values(Tiles)
   const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -58,7 +64,7 @@ export const TileSwapper: FC<TileSwapperProps> = observer((props) => {
   return (
     <>
       <Tile onClick={handleClick}>
-        <CurrentTile {...props} />
+        <CurrentTile {...(props as TileSwapperProps)} />
       </Tile>
     </>
   )

@@ -206,5 +206,9 @@ export const translations: ITranslations = {
     seedlingAbsorption: 'Ilość małych drzew potrzebnych do pochłonięcia emisji CO2',
     totalEmissions: 'Całkowita emisja CO2',
     parkAbsorption: 'Park o redukcji zanieczyszczeń najbardziej zbliżonej do tej ilości CO2',
+    services: 'Usługi',
+    transport: 'Transport',
+    events: 'Wydarzenia',
+    user: 'Dane użytkownika',
   },
 }

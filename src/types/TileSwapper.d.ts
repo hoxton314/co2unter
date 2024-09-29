@@ -10,9 +10,9 @@ export type SectorData = {
   }
 }
 
-export type sectorName = 'transport' | 'events' | 'services' | 'user'
+export type sectorType = 'transport' | 'events' | 'services' | 'user'
 
 export type TileSwapperProps = {
-  sectorName: sectorName
-  sectorData: SectorData
+  sectorType: sectorType
+  sectorName: string
 }

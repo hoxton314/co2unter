@@ -3,6 +3,7 @@ import { RootStore } from './Root.store'
 import { SCREENS } from '../components/ScreenRouter'
 import { DEV_MODE } from '../constants/envs'
 import { ICalculatedEmission } from '../types/calculatedEmission'
+import { ISectors } from '../types/sectors'
 
 export type Theme = 'light' | 'dark'
 
@@ -14,6 +15,7 @@ export class AppStateStore {
   prevScreen: keyof typeof SCREENS = 'welcome'
 
   calculatedEmission: ICalculatedEmission = {}
+  sectors: ISectors = {}
 
   constructor(rootStore: RootStore) {
     makeAutoObservable(this)
@@ -35,5 +37,9 @@ export class AppStateStore {
 
   @action.bound setCalculatedEmission(emission: ICalculatedEmission) {
     this.calculatedEmission = emission
+  }
+
+  @action.bound setSectors(sectors: ISectors) {
+    this.sectors = sectors
   }
 }

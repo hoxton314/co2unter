@@ -205,5 +205,9 @@ export interface ITranslations {
     seedlingAbsorption: string
     totalEmissions: string
     parkAbsorption: string
+    services: string
+    transport: string
+    events: string
+    user: string
   }
 }

@@ -209,5 +209,8 @@ export interface ITranslations {
     transport: string
     events: string
     user: string
+    formButton: string
+    formAgain: string
+    formFirstTime: string
   }
 }

@@ -3,21 +3,28 @@ import { FC, useContext } from 'react'
 import { TileSwapperProps } from '../../../types/TileSwapper'
 import { StoreContext } from '../../../App'
 import { Button } from '../../../styles/generic.styles'
+import { Title } from '../../FormScreen/FormScreen.styles'
+import { TextCenter } from '../SectorsBreakdownScreen.styles'
 
 export const FormTile: FC<TileSwapperProps> = observer(({ sectorName }) => {
   const store = useContext(StoreContext)
-  const { user } = store.TranslationsState.translations.CalculatedEmissions
+  const { user, formButton, formAgain, formFirstTime } = store.TranslationsState.translations.CalculatedEmissions
   return (
     <>
+      <Title>{user}</Title>
+
       {Object.entries(store.AppState.calculatedEmission).length ? (
-        <Button onClick={() => store.AppState.setCurrentScreen('form')} type="primary">
-          Do form again
-        </Button>
+        <>
+          <TextCenter>{formAgain}</TextCenter>
+          <Button onClick={() => store.AppState.setCurrentScreen('form')} type="primary">
+            {formButton}
+          </Button>
+        </>
       ) : (
         <>
-          {user}
+          <TextCenter>{formFirstTime}</TextCenter>
           <Button onClick={() => store.AppState.setCurrentScreen('form')} type="primary">
-            Get your data
+            {formButton}
           </Button>
         </>
       )}

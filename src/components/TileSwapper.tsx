@@ -13,9 +13,10 @@ import { StoreContext } from '../App'
 export const Tile = styled.div`
   aspect-ratio: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   border-radius: 10px;
   gap: 10px;
 

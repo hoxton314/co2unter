@@ -8,3 +8,16 @@ export const ScreenContainer = styled.div`
   align-items: center;
   gap: 64px;
 `
+export const TileContainer = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 32px;
+
+  svg {
+    ${({ theme }) => `
+    color: ${theme.primary};
+  `}
+  }
+`

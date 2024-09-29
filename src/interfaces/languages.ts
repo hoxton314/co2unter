@@ -208,4 +208,11 @@ export interface ITranslations {
       ]
     }
   }
+  SectorBreakdown: {
+    parks: string
+    emission: string
+    oldTrees: string
+    mediumTrees: string
+    saplings: string
+  }
 }

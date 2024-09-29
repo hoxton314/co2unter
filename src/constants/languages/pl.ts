@@ -209,4 +209,11 @@ export const translations: ITranslations = {
       ],
     },
   },
+  SectorBreakdown: {
+    parks: 'Park o redukcji zanieczyszczeń najbardziej zbliżonej do tej ilości CO2: ',
+    emission: 'Ilość CO2 generowanego przez rok: ',
+    oldTrees: 'Ile potrzeba 100-letnich drzew, aby zniwelować te zanieczyszczenia: ',
+    mediumTrees: 'Ile potrzeba 20/30-letnich drzew, aby zniwelować te zanieczyszczenia: ',
+    saplings: 'Ile potrzeba sadzonek, aby zniwelować te zanieczyszczenia: ',
+  },
 }

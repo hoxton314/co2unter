@@ -1,6 +1,6 @@
 export interface ICalculatedEmission {
   oldTreesAbsorption?: number
   mediumTreeAbsorption?: number
-  smallTreeAbsorption?: number
+  seedlingAbsorption?: number
   totalEmissions?: number
 }

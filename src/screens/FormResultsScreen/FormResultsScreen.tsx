@@ -1,14 +1,24 @@
 import { observer } from 'mobx-react'
 import { FC, useContext, useEffect, useState } from 'react'
-import { Container, ErrorMessageBox } from './FormResultsScreen.styles'
+import {
+  Container,
+  ErrorMessageBox,
+  ResultsContainer,
+  ResultsItem,
+  ResultsItemIcon,
+  ResultsItemTitle,
+  ResultsItemValue,
+} from './FormResultsScreen.styles'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
 import { axiosInstance } from '../../methods/axiosConfig'
 import { StoreContext } from '../../App'
 import { ICalculatedEmission } from '../../types/calculatedEmission'
+import { getIcon } from './icons'
 
 export const FormResultsScreen: FC = observer(() => {
   const store = useContext(StoreContext)
   const { calculatedEmission } = store.AppState
+  const { CalculatedEmissions: trans } = store.TranslationsState.translations
   const { parsedForm } = store.FormState
 
   const [isLoading, setIsLoading] = useState(true)
@@ -50,22 +60,32 @@ export const FormResultsScreen: FC = observer(() => {
       {isLoading && !error ? (
         <LoadingSpinner />
       ) : (
-        <div>
+        <>
           <h1>Results</h1>
 
           {objectKeys.length ? (
-            objectKeys.map((key) => (
-              <div key={key}>
-                <p>{key}</p>
-                {calculatedEmission !== undefined && (
-                  <p>{calculatedEmission[key as keyof typeof calculatedEmission]}</p>
-                )}
-              </div>
-            ))
+            <ResultsContainer>
+              {objectKeys.map((key) => {
+                if (key === 'closestPark') return
+
+                return (
+                  <ResultsItem key={key}>
+                    <ResultsItemTitle>{trans[key as keyof typeof trans]}</ResultsItemTitle>
+                    {calculatedEmission !== undefined && (
+                      <ResultsItemValue>
+                        {Math.floor(calculatedEmission[key as keyof typeof calculatedEmission] || 0)}
+                      </ResultsItemValue>
+                    )}
+
+                    <ResultsItemIcon>{getIcon(key)}</ResultsItemIcon>
+                  </ResultsItem>
+                )
+              })}
+            </ResultsContainer>
           ) : (
-            <ErrorMessageBox> {error || 'Something went wrong'} </ErrorMessageBox>
+            <ErrorMessageBox>{error || 'Something went wrong'}</ErrorMessageBox>
           )}
-        </div>
+        </>
       )}
     </Container>
   )

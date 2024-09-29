@@ -191,7 +191,7 @@ export interface ITranslations {
   CalculatedEmissions: {
     oldTreesAbsorption: string
     mediumTreeAbsorption: string
-    smallTreeAbsorption: string
+    seedlingAbsorption: string
     totalEmissions: string
   }
 }

@@ -12,7 +12,7 @@ import { usePwa } from '../hooks/usePWA'
 import { HeatMapScreen } from '../screens/HeatMapScreen/HeatMapScreen'
 import { FormResultsScreen } from '../screens/FormResultsScreen/FormResultsScreen'
 
-const RouterContainer = styled.div<{ $isPwa?: boolean }>`
+const RouterContainer = styled.div.attrs({ className: 'router' })<{ $isPwa?: boolean }>`
   /* padding: 32px 16px; */
   width: 100%;
   height: ${({ $isPwa }) =>

@@ -12,8 +12,8 @@ export const ScreenContainer = styled.div`
 export const TileContainer = styled.div`
   width: 90%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 20px;
   align-content: space-evenly;
   text-align: center;
@@ -22,7 +22,18 @@ export const TileContainer = styled.div`
     ${({ theme }) => `
     color: ${theme.primary};
     padding: 10px 0;
+    height: 200px;
+    width: auto;
   `}
+  }
+
+  @media (min-width: 500px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    svg {
+      height: inherit;
+      width: auto;
+    }
   }
 `
 export const TextCenter = styled.div`
@@ -36,5 +47,10 @@ export const TileBox = styled.div`
   align-items: center;
 `
 export const Text = styled.p`
-  font-size: 14px;
+  font-size: 20px;
+  @media (min-width: 500px) {
+    font-size: 14px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
 `

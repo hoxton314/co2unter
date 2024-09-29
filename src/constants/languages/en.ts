@@ -129,19 +129,19 @@ export const translations: ITranslations = {
       options: [
         {
           label: 'I don’t have/use a car',
-          name: 'noCar',
+          name: 'never',
         },
         {
           label: 'Rarely (20 km)',
-          name: 'rarelyCarUsage',
+          name: 'rarely',
         },
         {
           label: 'Occasionally (100 km)',
-          name: 'occasionallyCarUsage',
+          name: 'occasionally',
         },
         {
           label: 'Regularly (250 km)',
-          name: 'regularlyCarUsage',
+          name: 'regularly',
         },
         {
           label: 'I know the distance (in km): ',
@@ -175,36 +175,15 @@ export const translations: ITranslations = {
       options: [
         {
           label: 'Rarely (up to one two-way flight yearly)',
-          name: 'rarelyFlying',
+          name: 'rarely',
         },
         {
           label: 'Occasionally (2-3 flights yearly)',
-          name: 'occasionallyFlying',
+          name: 'occasionally',
         },
         {
           label: 'Regularly (more flights, intercontinental flights)',
-          name: 'regularlyFlying',
-        },
-        {
-          label: 'Custom amount',
-          name: 'customFlightNumber',
-        },
-      ],
-    },
-    flyingHabitCustom: {
-      title: 'Enter amounts for each type of flights you take in a year:',
-      options: [
-        {
-          label: 'Short-range (up to 3 hours)',
-          name: 'shortRange',
-        },
-        {
-          label: 'Mid-range (4 to 7 hours) ',
-          name: 'midRange',
-        },
-        {
-          label: 'Long-range (over 8 hours)',
-          name: 'longRange',
+          name: 'regularly',
         },
       ],
     },

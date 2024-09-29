@@ -191,3 +191,11 @@ export const ShoppingRadioListItem = styled(RadioListItem)`
 export const ElectricityRadioListItem = styled(RadioListItem)`
   grid-template-columns: 40px 150px auto;
 `
+
+export const CarUseRadioListItem = styled(RadioListItem)`
+  grid-template-columns: 170px auto;
+`
+
+export const FlyingHabitsRadioListItem = styled(RadioListItem)`
+  grid-template-columns: 1fr;
+`

@@ -128,19 +128,19 @@ export interface ITranslations {
       options: [
         {
           label: string
-          name: 'noCar'
+          name: 'never'
         },
         {
           label: string
-          name: 'rarelyCarUsage'
+          name: 'rarely'
         },
         {
           label: string
-          name: 'occasionallyCarUsage'
+          name: 'occasionally'
         },
         {
           label: string
-          name: 'regularlyCarUsage'
+          name: 'regularly'
         },
         {
           label: string
@@ -174,36 +174,15 @@ export interface ITranslations {
       options: [
         {
           label: string
-          name: 'rarelyFlying'
+          name: 'rarely'
         },
         {
           label: string
-          name: 'occasionallyFlying'
+          name: 'occasionally'
         },
         {
           label: string
-          name: 'regularlyFlying'
-        },
-        {
-          label: string
-          name: 'customFlightNumber'
-        },
-      ]
-    }
-    flyingHabitCustom: {
-      title: string
-      options: [
-        {
-          label: string
-          name: 'shortRange'
-        },
-        {
-          label: string
-          name: 'midRange'
-        },
-        {
-          label: string
-          name: 'longRange'
+          name: 'regularly'
         },
       ]
     }

@@ -10,6 +10,7 @@ import {
   CarType,
   FlyingHabit,
   ElectricityPresets,
+  CarUsage,
 } from '../types/formStore'
 import { FormMap } from '../screens/FormScreen/FormScreen'
 
@@ -123,7 +124,7 @@ export class FormStateStore {
     this.form.dailyCommute = dailyCommute
   }
 
-  @action.bound setOtherCarUsage(otherCarUsage: number) {
+  @action.bound setOtherCarUsage(otherCarUsage: number | CarUsage) {
     this.form.otherCarUsage = otherCarUsage
   }
 

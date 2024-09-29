@@ -4,6 +4,7 @@ import { Container, ErrorMessageBox } from './FormResultsScreen.styles'
 import { LoadingSpinner } from '../../components/LoadingSpinner'
 import { axiosInstance } from '../../methods/axiosConfig'
 import { StoreContext } from '../../App'
+import { ICalculatedEmission } from '../../types/calculatedEmission'
 
 export const FormResultsScreen: FC = observer(() => {
   const store = useContext(StoreContext)
@@ -16,14 +17,16 @@ export const FormResultsScreen: FC = observer(() => {
 
   const fetchResults = async () => {
     try {
-      const res = await axiosInstance.post('/calculate-emission', parsedForm)
+      const res = await axiosInstance.post<ICalculatedEmission | { error: string }>('/calculate-emission', parsedForm)
 
       if (res.status === 200) {
+        store.AppState.setCalculatedEmission(res.data as ICalculatedEmission)
         setIsLoading(false)
 
         console.log(res)
       } else {
-        setError(res.data.error)
+        const data = res.data as { error: string }
+        setError(data.error)
       }
     } catch (error) {
       console.log(error)

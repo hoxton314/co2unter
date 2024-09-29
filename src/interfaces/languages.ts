@@ -6,6 +6,11 @@ export interface ITranslations {
     environmentVsEmission: string
     heatMap: string
   }
+  Navigation: {
+    returnText: string,
+    form: string,
+    home: string,
+  },
   FormScreen: {
     houseSize: {
       title: string
@@ -191,7 +196,7 @@ export interface ITranslations {
   CalculatedEmissions: {
     oldTreesAbsorption: string
     mediumTreeAbsorption: string
-    smallTreeAbsorption: string
+    seedlingAbsorption: string
     totalEmissions: string
     parkAbsorption: string
   }

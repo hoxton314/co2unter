@@ -7,6 +7,11 @@ export const translations: ITranslations = {
     environmentVsEmission: 'Środowisko vs. emisja CO2',
     heatMap: 'Heatmapa of emisji CO2',
   },
+  Navigation: {
+    returnText: 'Powrot',
+    form: 'Form',
+    home: 'Home',
+  },
   FormScreen: {
     houseSize: {
       title: 'Jak duży jest Twój dom?',
@@ -192,7 +197,7 @@ export const translations: ITranslations = {
   CalculatedEmissions: {
     oldTreesAbsorption: 'Ilość starych drzew potrzebnych do pochłonięcia emisji CO2',
     mediumTreeAbsorption: 'Ilość średnich drzew potrzebnych do pochłonięcia emisji CO2',
-    smallTreeAbsorption: 'Ilość małych drzew potrzebnych do pochłonięcia emisji CO2',
+    seedlingAbsorption: 'Ilość małych drzew potrzebnych do pochłonięcia emisji CO2',
     totalEmissions: 'Całkowita emisja CO2',
     parkAbsorption: 'Park o redukcji zanieczyszczeń najbardziej zbliżonej do tej ilości CO2',
   },

@@ -2,7 +2,6 @@ import { createContext, FC, useContext, useEffect } from 'react'
 import { AppContainer } from './styles/App.styles'
 import { GlobalStyles } from './styles/Global.styles'
 import { Helmet } from './components/Helmet'
-import { axiosInstance } from './methods/axiosConfig'
 import { lightTheme } from './theme/light'
 import { darkTheme } from './theme/dark'
 import { ThemeProvider } from 'styled-components'
@@ -26,14 +25,6 @@ const App: FC = observer(() => {
   const { theme } = store.AppState
 
   useEffect(() => {
-    try {
-      // axiosInstance.get('/').then((res) => {
-      //   console.log(res)
-      // })
-    } catch (error) {
-      console.log(error)
-    }
-
     const hasWelcomeScreenVisited = localStorage.getItem('hasWelcomeScreenVisited')
     if (!hasWelcomeScreenVisited) {
       store.AppState.setCurrentScreen('welcome')
